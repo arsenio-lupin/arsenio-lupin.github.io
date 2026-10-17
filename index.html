@@ -478,65 +478,34 @@
                                 ornament="⚜"
                             />
 
-                            <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-stretch">
-                                {/* Left main text column */}
-                                <div className="md:col-span-7 bg-[#1c1613] p-8 sm:p-10 border border-[#c9a24b]/30 relative rounded-sm">
-                                    <div className="absolute top-3 right-3 text-[#c9a24b]/30 font-cinzel text-xs">I. LA CREAZIONE</div>
-                                    <h3 className="font-playfair text-2xl sm:text-3xl font-bold text-[#e5c378] mb-6">
-                                        Maurice Leblanc e la nascita del mito
-                                    </h3>
+                            {/* Blocco centrale unico a due colonne */}
+                            <div className="max-w-5xl mx-auto bg-[#1c1613] p-8 sm:p-12 border border-[#c9a24b]/30 relative rounded-sm">
+                                <div className="absolute top-3 right-3 text-[#c9a24b]/30 font-cinzel text-xs">1. LA CREAZIONE</div>
+                                <h3 className="font-playfair text-2xl sm:text-3xl font-bold text-[#e5c378] mb-8 text-center">
+                                    Maurice Leblanc e la nascita del mito
+                                </h3>
 
-                                    <p className="drop-cap font-garamond text-xl sm:text-2xl text-[#d8ceb8] leading-relaxed mb-6">
-                                        Maurice Leblanc (1864–1941), raffinato scrittore e giornalista normanno, creò Arsène Lupin su commissione dell'editore Pierre Lafitte, che cercava un eroe francese capace di rivaleggiare con il celebre Sherlock Holmes di Arthur Conan Doyle. Secondo un'ipotesi ricorrente fra gli studiosi — ma sempre negata dallo stesso Leblanc — la figura di Lupin potrebbe essere stata suggestionata anche dall'anarchico francese Alexandre Marius Jacob, celebre per la sua audacia e per il codice morale che gli impediva, a suo dire, di rubare a medici, artisti o lavoratori.
+                                <div className="md:columns-2 md:gap-12 font-garamond text-lg sm:text-xl text-[#d8ceb8] leading-relaxed md:text-justify">
+                                    <p className="drop-cap mb-5">
+                                        Arsène Lupin è un personaggio di fantasia francese, creato da Maurice Leblanc. Questo ladro gentiluomo è particolarmente noto per la sua abilità nell'utilizzare travestimenti, trucchi e identità multiple per commettere crimini e risolvere casi.
                                     </p>
-
-                                    <p className="font-garamond text-lg sm:text-xl text-[#d8ceb8] leading-relaxed mb-6">
-                                        Lupin non è un criminale comune: è un <strong className="text-[#f4ecd8]">gentiluomo cosmopolita</strong>, spadaccino, cultore d'arte e prestigiatore sociale. Ruba soltanto ai ceti aristocratici e ai magnati disonesti, lasciando sovente un beffardo biglietto da visita prima di compiere l'impresa.
+                                    <p className="mb-5">
+                                        L'eroe appare per la prima volta nel racconto <em className="text-[#e5c378]">L'arresto di Arsenio Lupin</em>, pubblicato sulla rivista <em className="text-[#e5c378]">Je sais tout</em> nel luglio del 1905. Il suo creatore, Maurice Leblanc, incluse questo racconto nella raccolta <em className="text-[#e5c378]">Arsenio Lupin, ladro gentiluomo</em>, pubblicata nel 1907. Considerato il grande successo riscosso dal personaggio tra i lettori, le sue avventure sono state pubblicate in diciassette romanzi, trentanove racconti e cinque opere teatrali dal 1905 fino alla morte dell'autore, avvenuta nel 1941.
                                     </p>
-
-                                    <div className="border-l-2 border-[#c9a24b] pl-4 py-1 italic font-garamond text-lg text-[#e5c378]">
-                                        «Arsène Lupin non ha rivali né padroni: si diverte a farsi beffe della serietà del mondo borghese con un sorriso e un inchino perfetto.»
-                                    </div>
-                                </div>
-
-                                {/* Right complementary column */}
-                                <div className="md:col-span-5 flex flex-col justify-between space-y-6">
-                                    {/* Box 1: Gli Avversari */}
-                                    <div className="bg-[#181310] p-6 border border-[#c9a24b]/30 rounded-sm">
-                                        <div className="flex items-center space-x-3 mb-3 text-[#c9a24b]">
-                                            <Compass className="w-5 h-5" />
-                                            <h4 className="font-cinzel text-sm uppercase tracking-widest font-bold text-[#e5c378]">
-                                                I Grandi Rivali
-                                            </h4>
-                                        </div>
-                                        <p className="font-garamond text-base sm:text-lg text-[#d8ceb8] leading-normal">
-                                            Le sue avventure vedono l'instancabile inseguimento dell'ostinato <strong className="text-[#f4ecd8]">Ispettore Ganimard</strong> della Sûreté di Parigi, e lo scontro intellettuale con <strong className="text-[#f4ecd8]">Herlock Sholmès</strong>, sagace parodia dell'investigatore di Baker Street creata da Leblanc per satireggiare il rigido razionalismo britannico.
-                                        </p>
-                                    </div>
-
-                                    {/* Box 2: Eredità Culturale */}
-                                    <div className="bg-[#181310] p-6 border border-[#c9a24b]/30 rounded-sm">
-                                        <div className="flex items-center space-x-3 mb-3 text-[#c9a24b]">
-                                            <Sparkles className="w-5 h-5" />
-                                            <h4 className="font-cinzel text-sm uppercase tracking-widest font-bold text-[#e5c378]">
-                                                L'Eredità Moderna
-                                            </h4>
-                                        </div>
-                                        <p className="font-garamond text-base sm:text-lg text-[#d8ceb8] leading-normal mb-3">
-                                            Il carisma di Lupin ha generato una vasta discendenza: dal celeberrimo nipote <strong className="text-[#f4ecd8]">Lupin III</strong> ideato dal mangaka Monkey Punch, all'inafferrabile ladro <strong className="text-[#f4ecd8]">Kaito Kid</strong> di Gosho Aoyama.
-                                        </p>
-                                        <p className="font-garamond text-base sm:text-lg text-[#d8ceb8] leading-normal">
-                                            Viene citato da Umberto Eco ne <em>Il pendolo di Foucault</em> ed è la figura tutelare del videogioco cult <em>Persona 5</em>.
-                                        </p>
-                                    </div>
+                                    <p className="mb-5">
+                                        Le sue numerose avventure sono ambientate in Francia durante la Belle Époque e i ruggenti anni Venti, periodi in cui Arsène Lupin riflette l'evoluzione del pensiero dell'autore: le simpatie anarchiche di Lupin scompaiono nei romanzi scritti durante la Prima guerra mondiale, periodo in cui il personaggio diventa profondamente patriottico. Inoltre, smette gradualmente di essere un ladro per diventare un detective. Oltre a essere un atleta e un combattente esperto, Lupin possiede un talento innato per il travestimento e una grande astuzia, qualità che sfrutta per risolvere enigmi di ogni tipo.
+                                    </p>
+                                    <p>
+                                        La sua natura infantile e affascinante, spesso beffarda, unita a un carattere tormentato e misterioso, lo ha reso una figura popolare, incarnando il ladro gentiluomo della Belle Époque. La sua fama internazionale ha dato vita a adattamenti cinematografici americani e a manga realizzati da autori giapponesi. Il suo nome è inoltre legato alla città francese di Étretat, in Normandia, che è al centro di diverse sue avventure, come <em className="text-[#e5c378]">«Il faraglione cavo»</em>, contribuendo così al mito che circonda il luogo.
+                                    </p>
                                 </div>
                             </div>
 
                             {/* Blocco Biografico Autore: Maurice Leblanc */}
-                            <div className="mt-12 bg-[#1c1613] p-8 sm:p-10 border border-[#c9a24b]/30 relative rounded-sm">
-                                <div className="absolute top-3 right-3 text-[#c9a24b]/30 font-cinzel text-xs">II. L'AUTORE</div>
+                            <div className="max-w-5xl mx-auto mt-12 bg-[#1c1613] p-8 sm:p-10 border border-[#c9a24b]/30 relative rounded-sm">
+                                <div className="absolute top-3 right-3 text-[#c9a24b]/30 font-cinzel text-xs">2. L'AUTORE</div>
 
-                                <h3 className="font-playfair text-2xl sm:text-3xl font-bold text-[#e5c378] mb-6">
+                                <h3 className="font-playfair text-2xl sm:text-3xl font-bold text-[#e5c378] mb-6 text-center">
                                     Maurice Leblanc: vita dell'autore
                                 </h3>
 
@@ -585,7 +554,7 @@
                                     </div>
 
                                     {/* Testo Biografico */}
-                                    <div className="md:col-span-2 space-y-4">
+                                    <div className="md:col-span-2 space-y-4 md:text-justify">
                                         <p className="drop-cap font-garamond text-xl sm:text-2xl text-[#d8ceb8] leading-relaxed">
                                             Maurice Marie Émile Leblanc nacque a Rouen, in Normandia, l'11 dicembre 1864, secondo figlio di una famiglia agiata e colta. Rifiutando la carriera che il padre aveva immaginato per lui in una fabbrica di carte da gioco, si trasferì a Parigi nel 1888 per dedicarsi alla scrittura, lavorando come giornalista e pubblicando romanzi di costume di ispirazione naturalista; da adolescente aveva peraltro frequentato, a Rouen, Gustave Flaubert e Guy de Maupassant.
                                         </p>
@@ -1059,7 +1028,16 @@
                             <div className="h-px bg-gradient-to-r from-transparent via-[#c9a24b]/40 to-transparent w-full max-w-md mx-auto"></div>
 
                             <div className="font-garamond text-sm text-[#c9a24b]/80 space-y-1">
-                                <p>Dati storici e bibliografici raccolti da archivi e fonti pubbliche (Wikipedia, Association des Amis d’Arsène Lupin).</p>
+                                <p className="leading-relaxed">
+                                    Testi basati sulle voci «Arsenio Lupin» di{' '}
+                                    <a href="https://it.wikipedia.org/wiki/Arsenio_Lupin" target="_blank" rel="noopener noreferrer" className="text-[#e5c378] hover:text-[#f4ecd8] underline underline-offset-2">Wikipedia in italiano</a>{' '}
+                                    e «Arsène Lupin» di{' '}
+                                    <a href="https://fr.wikipedia.org/wiki/Ars%C3%A8ne_Lupin" target="_blank" rel="noopener noreferrer" className="text-[#e5c378] hover:text-[#f4ecd8] underline underline-offset-2">Wikipedia in francese</a>{' '}
+                                    (traduzione e adattamento), disponibili con licenza{' '}
+                                    <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.it" target="_blank" rel="noopener noreferrer" className="text-[#e5c378] hover:text-[#f4ecd8] underline underline-offset-2">CC BY-SA 4.0</a>.
+                                    Filmografia, serie radiofoniche, discografia e fumetti dall'edizione Newton Compton delle opere complete di Lupin. Schede dei film da IMDb.
+                                    Locandine, copertine e immagini sono di proprietà dei rispettivi titolari e riprodotte a scopo illustrativo.
+                                </p>
                                 <p className="font-cinzel text-xs tracking-wider text-[#d8ceb8]/60 mt-3">
                                     © {new Date().getFullYear()} — Arsène Lupin - Il Ladro Gentiluomo | Édition Belle Époque
                                 </p>
