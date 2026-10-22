@@ -902,7 +902,7 @@
                                             <p className="font-garamond italic text-base text-[#c9a24b] mb-4">{d.text} ({d.discs})</p>
                                         </div>
                                         <p className="font-garamond text-base text-[#d8ceb8] border-t border-[#c9a24b]/15 pt-3 leading-relaxed">
-                                            {d.label}{d.code ? ` ${d.code}` : ''}{d.ean ? <><br />EAN {d.ean}</> : null}
+                                            {d.label}{d.code ? ` ${d.code}` : ''}{d.ean ? <>{' '}<span className="whitespace-nowrap">EAN {d.ean}</span></> : null}
                                         </p>
                                     </div>
                                 ))}
