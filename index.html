@@ -166,11 +166,11 @@
         ];
 
         const THEATER = [
-            { year: 1908, original: "Arsène Lupin", italian: "Arsenio Lupin", notes: "Scritta in collaborazione con Francis De Croisset. Trionfo assoluto al Théâtre de l'Athénée di Parigi." },
-            { year: 1911, original: "Une aventure d'Arsène Lupin", italian: "Un'avventura di Arsenio Lupin", notes: "Dramma teatrale in un atto scritto da Maurice Leblanc." },
-            { year: 1920, original: "Le retour d'Arsène Lupin", italian: "Il ritorno di Arsenio Lupin", notes: "Scritta nuovamente a quattro mani con Francis De Croisset." },
-            { year: 1930, original: "Cette femme est à moi", italian: "Questa donna è mia", notes: "Commedia scritta negli anni Trenta ma mai rappresentata in scena; pubblicata solo postuma nel 2015 dall'Association des Amis d’Arsène Lupin." },
-            { year: 1932, original: "Un quart d'heure avec Arsène Lupin", italian: "Un quarto d'ora con Arsenio Lupin", notes: "Breve atto unico radiofonico/teatrale di Maurice Leblanc." }
+            { year: 1908, original: "Arsène Lupin", italian: "Arsenio Lupin", url: "https://fr.wikipedia.org/wiki/Ars%C3%A8ne_Lupin_(pi%C3%A8ce_de_th%C3%A9%C3%A2tre)", notes: "Scritta in collaborazione con Francis De Croisset. Trionfo assoluto al Théâtre de l'Athénée di Parigi." },
+            { year: 1911, original: "Une aventure d'Arsène Lupin", italian: "Un'avventura di Arsenio Lupin", url: "https://fr.wikipedia.org/wiki/Une_aventure_d%27Ars%C3%A8ne_Lupin", notes: "Dramma teatrale in un atto scritto da Maurice Leblanc." },
+            { year: 1920, original: "Le retour d'Arsène Lupin", italian: "Il ritorno di Arsenio Lupin", url: "https://fr.wikipedia.org/wiki/Le_Retour_d%27Ars%C3%A8ne_Lupin_(pi%C3%A8ce_de_th%C3%A9%C3%A2tre)", notes: "Scritta nuovamente a quattro mani con Francis De Croisset." },
+            { year: 1930, original: "Cette femme est à moi", italian: "Questa donna è mia", url: "https://fr.wikipedia.org/wiki/Cette_femme_est_%C3%A0_moi", notes: "Commedia scritta negli anni Trenta ma mai rappresentata in scena; pubblicata solo postuma nel 2015 dall'Association des Amis d’Arsène Lupin." },
+            { year: 1932, original: "Un quart d'heure avec Arsène Lupin", italian: "Un quarto d'ora con Arsenio Lupin", url: "https://fr.wikipedia.org/wiki/Un_quart_d%27heure_avec_Ars%C3%A8ne_Lupin", notes: "Breve atto unico radiofonico/teatrale di Maurice Leblanc." }
         ];
 
         const CINEMA = [
@@ -734,6 +734,16 @@
                                         <p className="font-garamond text-base text-[#d8ceb8] border-t border-[#c9a24b]/15 pt-3 leading-relaxed">
                                             {play.notes}
                                         </p>
+                                        {play.url && (
+                                            <a
+                                                href={play.url}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                className="inline-block mt-3 font-cinzel text-[11px] uppercase tracking-widest text-[#e5c378] hover:text-[#f4ecd8] underline underline-offset-4"
+                                            >
+                                                Approfondisci su Wikipedia (FR) ↗
+                                            </a>
+                                        )}
                                     </div>
                                 ))}
                             </div>
