@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="it" class="scroll-smooth">
+<html lang="it">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -28,1111 +28,1157 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Playfair+Display:ital,wght@0,600;0,800;1,600&display=swap" rel="stylesheet">
-
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4.1.7"></script>
-    <script src="https://unpkg.com/@babel/standalone@7.26.10/babel.min.js"></script>
-    <script type="importmap">
-    {
-        "imports": {
-            "react": "https://esm.sh/react@18.3.1",
-            "react/": "https://esm.sh/react@18.3.1/",
-            "react-dom": "https://esm.sh/react-dom@18.3.1",
-            "react-dom/": "https://esm.sh/react-dom@18.3.1/",
-            "react-dom/client": "https://esm.sh/react-dom@18.3.1/client",
-            "lucide-react": "https://esm.sh/lucide-react@0.474.0?external=react"
-        }
-    }
-    </script>
     <style>
-        :root {
-            --bg-dark: #120e0c;
-            --bg-card: #1c1613;
-            --wine: #6b1f2a;
-            --wine-light: #8b2635;
-            --gold: #c9a24b;
-            --gold-light: #e5c378;
-            --cream: #f4ecd8;
-            --cream-muted: #d8ceb8;
-        }
-        body {
-            font-family: 'Cormorant Garamond', Georgia, serif;
-            background-color: var(--bg-dark);
-            color: var(--cream);
-            background-image:
-                radial-gradient(ellipse at top, rgba(107, 31, 42, 0.22) 0%, transparent 60%),
-                radial-gradient(ellipse at bottom, rgba(201, 162, 75, 0.08) 0%, transparent 70%),
-                linear-gradient(to bottom, #120e0c, #16120f, #120e0c);
-            background-attachment: fixed;
-        }
-        .font-cinzel { font-family: 'Cinzel', serif; }
-        .font-playfair { font-family: 'Playfair Display', serif; }
-        .font-garamond { font-family: 'Cormorant Garamond', serif; }
+        :root{--bg-dark:#120e0c;--bg-card:#1c1613;--wine:#6b1f2a;--wine-light:#8b2635;--gold:#c9a24b;--gold-light:#e5c378;--cream:#f4ecd8;--cream-muted:#d8ceb8}
+        *,*::before,*::after{box-sizing:border-box}
+        [hidden]{display:none!important}
+        html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+        body{margin:0;font-family:'Cormorant Garamond',Georgia,serif;line-height:1.5;background-color:var(--bg-dark);color:var(--cream);-webkit-font-smoothing:antialiased;
+            background-image:radial-gradient(ellipse at top,rgba(107,31,42,.22) 0%,transparent 60%),radial-gradient(ellipse at bottom,rgba(201,162,75,.08) 0%,transparent 70%),linear-gradient(to bottom,#120e0c,#16120f,#120e0c);background-attachment:fixed}
+        ::selection{background:#6b1f2a;color:#f4ecd8}
+        h1,h2,h3,h4,p,ul,ol,figure{margin:0}
+        h1,h2,h3,h4{font-size:inherit;font-weight:inherit}
+        ul,ol{padding:0;list-style:none}
+        img,svg{display:block;vertical-align:middle}
+        img{max-width:100%}
+        a{color:inherit;text-decoration:inherit}
+        button{font:inherit;color:inherit;background:transparent;border:0;padding:0;cursor:pointer}
+        input{font:inherit}
+        section[id]{scroll-margin-top:80px}
+        .ic{width:1.25rem;height:1.25rem;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}
+        .cinzel{font-family:'Cinzel',serif}
 
-        /* Vintage borders & drop caps */
-        .vintage-border {
-            border: 1px solid rgba(201, 162, 75, 0.35);
-            outline: 1px solid rgba(201, 162, 75, 0.15);
-            outline-offset: 4px;
-        }
-        .vintage-border-glow:hover {
-            border-color: rgba(229, 195, 120, 0.7);
-            box-shadow: 0 10px 25px -5px rgba(201, 162, 75, 0.18), inset 0 0 15px rgba(107, 31, 42, 0.3);
-        }
-        .drop-cap::first-letter {
-            font-family: 'Playfair Display', serif;
-            float: left;
-            font-size: 3.4rem;
-            line-height: 0.8;
-            padding-top: 4px;
-            padding-right: 12px;
-            padding-bottom: 2px;
-            color: var(--gold);
-            font-weight: 700;
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
-        }
-        /* Custom subtle scrollbar */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #0f0d0b;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #3a2c22;
-            border-radius: 4px;
-            border: 1px solid #c9a24b40;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: #6b1f2a;
-        }
+        /* Scrollbar */
+        ::-webkit-scrollbar{width:8px}
+        ::-webkit-scrollbar-track{background:#0f0d0b}
+        ::-webkit-scrollbar-thumb{background:#3a2c22;border-radius:4px;border:1px solid #c9a24b40}
+        ::-webkit-scrollbar-thumb:hover{background:#6b1f2a}
+
+        /* Struttura pagina */
+        .page{min-height:100vh;display:flex;flex-direction:column;position:relative;overflow-x:clip}
+        main{flex-grow:1}
+        .topbar{height:4px;background:linear-gradient(to right,#6b1f2a,#c9a24b,#6b1f2a);position:sticky;top:0;z-index:50}
+        .sec{max-width:72rem;margin:0 auto;padding:5rem 1rem}
+        .sec.w7{max-width:80rem}
+        .sec.alt{background:rgba(22,18,15,.6);border-top:1px solid rgba(201,162,75,.2);border-bottom:1px solid rgba(201,162,75,.2)}
+        @media(min-width:640px){.sec{padding-left:1.5rem;padding-right:1.5rem}}
+        @media(min-width:1024px){.sec{padding-left:2rem;padding-right:2rem}}
+
+        /* Header */
+        .hdr{position:sticky;top:4px;z-index:40;background:rgba(18,14,12,.9);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);border-bottom:1px solid rgba(201,162,75,.3);box-shadow:0 10px 15px -3px rgba(0,0,0,.1),0 4px 6px -4px rgba(0,0,0,.1)}
+        .hdr-in{max-width:80rem;margin:0 auto;padding:0 1rem;height:5rem;display:flex;align-items:center;justify-content:space-between}
+        @media(min-width:640px){.hdr-in{padding:0 1.5rem}}
+        @media(min-width:1024px){.hdr-in{padding:0 2rem}}
+        .brand{display:flex;align-items:center;gap:.75rem}
+        .logo{width:2.5rem;height:2.5rem;border-radius:50%;border:1px solid var(--gold);display:flex;align-items:center;justify-content:center;background:rgba(107,31,42,.4);transition:border-color .15s}
+        .brand:hover .logo{border-color:var(--gold-light)}
+        .logo svg{width:1.5rem;height:1.5rem}
+        .brand-name{font-family:'Cinzel',serif;font-size:1.25rem;font-weight:700;letter-spacing:.1em;color:var(--cream);display:block;line-height:1}
+        .brand-sub{font-style:italic;font-size:.75rem;letter-spacing:.1em;color:var(--gold);display:block;margin-top:.25rem;line-height:1rem}
+        @media(min-width:640px){.brand-name{font-size:1.5rem;line-height:1}}
+        .nav{display:none;align-items:center;gap:.25rem}
+        .nav a{font-family:'Cinzel',serif;font-size:.75rem;letter-spacing:.05em;text-transform:uppercase;padding:.5rem .75rem;color:var(--cream-muted);border:1px solid transparent;border-radius:4px;transition:all .15s}
+        .nav a:hover{color:var(--gold-light);background:rgba(107,31,42,.2);border-color:rgba(201,162,75,.3)}
+        @media(min-width:768px){.nav{display:flex}.burger{display:none!important}.mmenu{display:none!important}}
+        @media(min-width:1024px){.nav{gap:.75rem}.nav a{font-size:.875rem}}
+        .burger{display:block;padding:.5rem;border:1px solid rgba(201,162,75,.4);border-radius:4px;color:var(--gold)}
+        .burger:hover{color:var(--cream);background:rgba(107,31,42,.3)}
+        .burger .ic{width:1.5rem;height:1.5rem}
+        .burger .i-x{display:none}
+        .burger.open .i-x{display:block}
+        .burger.open .i-menu{display:none}
+        .mmenu{display:none;background:#16120f;border-bottom:1px solid rgba(201,162,75,.4);padding:.5rem 1rem 1.5rem}
+        .mmenu.open{display:block}
+        .mmenu a{display:block;font-family:'Cinzel',serif;font-size:.875rem;text-transform:uppercase;letter-spacing:.1em;padding:.75rem 1rem;color:var(--cream);border-left:2px solid transparent;transition:all .15s}
+        .mmenu a+a{margin-top:.5rem}
+        .mmenu a:hover{background:rgba(107,31,42,.4);border-left-color:var(--gold)}
+
+        /* Divisori e titoli di sezione */
+        .dv{display:flex;align-items:center;justify-content:center;margin:2rem 0}
+        .dl,.dr{height:1px;width:4rem}
+        .dl{background:linear-gradient(to right,transparent,rgba(201,162,75,.5),#c9a24b)}
+        .dr{background:linear-gradient(to right,#c9a24b,rgba(201,162,75,.5),transparent)}
+        @media(min-width:640px){.dl,.dr{width:7rem}}
+        .dm{display:flex;align-items:center;gap:.5rem;margin:0 1rem;color:var(--gold)}
+        .s1{font-size:.75rem}
+        .s2{font-size:.875rem;font-family:serif}
+        .dt{font-family:'Cinzel',serif;font-size:.75rem;text-transform:uppercase;letter-spacing:.25em;color:var(--gold-light);font-weight:700}
+        .sh{text-align:center;margin-bottom:3rem}
+        .so{color:var(--gold);font-size:1.25rem;line-height:1.75rem;margin-bottom:.25rem}
+        .sh h2{font-family:'Playfair Display',serif;font-size:1.875rem;line-height:2.25rem;font-weight:700;letter-spacing:-.025em;color:var(--cream);text-shadow:0 4px 3px rgba(0,0,0,.07),0 2px 2px rgba(0,0,0,.06)}
+        .ss{font-style:italic;font-size:1.125rem;line-height:1.75rem;color:var(--gold);margin:.5rem auto 0;max-width:42rem}
+        @media(min-width:640px){.sh h2{font-size:2.25rem;line-height:2.5rem}.ss{font-size:1.25rem;line-height:1.75rem}}
+        @media(min-width:768px){.sh h2{font-size:3rem;line-height:1}}
+
+        /* Hero */
+        #hero{max-width:none;min-height:90vh;display:flex;align-items:center;justify-content:center;padding:5rem 1rem;text-align:center;position:relative}
+        .hero-box{max-width:56rem;margin:0 auto;padding:2rem;position:relative;z-index:10;background:rgba(22,18,15,.9);border:2px solid rgba(201,162,75,.4);box-shadow:0 25px 50px -12px rgba(0,0,0,.25);border-radius:2px}
+        @media(min-width:640px){.hero-box{padding:3.5rem}}
+        .corner{position:absolute;color:var(--gold);font-size:1.25rem;line-height:1.75rem;font-family:serif;user-select:none}
+        .badge-hero{display:inline-block;padding:.25rem 1rem;border-top:1px solid rgba(201,162,75,.6);border-bottom:1px solid rgba(201,162,75,.6);margin-bottom:1.5rem}
+        .badge-hero span{font-family:'Cinzel',serif;font-size:.75rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold)}
+        @media(min-width:640px){.badge-hero span{font-size:.875rem}}
+        .hero-box h1{font-family:'Playfair Display',serif;font-size:2.25rem;line-height:1;font-weight:800;color:var(--cream);letter-spacing:-.025em;margin-bottom:1rem}
+        @media(min-width:640px){.hero-box h1{font-size:3.75rem}}
+        @media(min-width:768px){.hero-box h1{font-size:4.5rem}}
+        .hero-sub{font-family:'Cinzel',serif;font-size:1.125rem;line-height:1.75rem;color:var(--gold-light);letter-spacing:.1em;text-transform:uppercase;margin-bottom:1.5rem;font-weight:600}
+        @media(min-width:640px){.hero-sub{font-size:1.5rem;line-height:2rem}}
+        .hero-rule{width:6rem;height:1px;background:var(--gold);margin:0 auto 1.5rem}
+        .hero-txt{font-size:1.25rem;line-height:1.625;color:var(--cream-muted);max-width:42rem;margin:0 auto 2rem;font-style:italic}
+        @media(min-width:640px){.hero-txt{font-size:1.5rem;line-height:1.625}}
+        .hero-txt .who{color:var(--cream);font-weight:600;font-style:normal}
+        .hero-txt em{color:var(--gold-light)}
+        .hero-btns{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:1rem;padding-top:.5rem}
+        .btn{display:flex;align-items:center;gap:.5rem;font-family:'Cinzel',serif;font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;padding:.875rem 1.5rem;color:var(--cream);transition:all .3s}
+        @media(min-width:640px){.btn{font-size:.875rem}}
+        .btn .ic{width:1rem;height:1rem;color:var(--gold)}
+        .b1{background:var(--wine);border:1px solid var(--gold);box-shadow:0 4px 6px -1px rgba(0,0,0,.1)}
+        .b1:hover{background:var(--wine-light);transform:scale(1.05)}
+        .b2{background:transparent;border:1px solid rgba(201,162,75,.6)}
+        .b2:hover{background:rgba(201,162,75,.1);border-color:var(--gold)}
+
+        /* Blocchi biografia */
+        .blk{max-width:64rem;margin:0 auto;background:var(--bg-card);padding:2rem;border:1px solid rgba(201,162,75,.3);position:relative;border-radius:2px}
+        @media(min-width:640px){.blk{padding:3rem}}
+        .blk.b-aut{margin-top:3rem}
+        @media(min-width:640px){.blk.b-aut{padding:2.5rem}}
+        .lab{position:absolute;top:.75rem;right:.75rem;color:rgba(201,162,75,.3);font-family:'Cinzel',serif;font-size:.75rem;line-height:1rem}
+        .blk h3{font-family:'Playfair Display',serif;font-size:1.5rem;line-height:2rem;font-weight:700;color:var(--gold-light);text-align:center}
+        @media(min-width:640px){.blk h3{font-size:1.875rem;line-height:2.25rem}}
+        .b-mito h3{margin-bottom:2rem}
+        .b-aut h3{margin-bottom:1.5rem}
+        .mito-in{font-size:1.125rem;line-height:1.625;color:var(--cream-muted)}
+        @media(min-width:640px){.mito-in{font-size:1.25rem;line-height:1.75rem}}
+        @media(min-width:768px){.mito-in{display:flex;align-items:flex-start;gap:2rem}}
+        .fig{width:100%;max-width:200px;margin:0 auto 1.5rem}
+        @media(min-width:768px){.fig{margin:0;width:200px;flex-shrink:0;text-align:left}}
+        .frame{padding:.375rem;border:1px solid rgba(201,162,75,.6);background:#120e0c;box-shadow:0 10px 15px -3px rgba(0,0,0,.4),0 4px 6px -4px rgba(0,0,0,.4)}
+        .frame img{width:100%;cursor:zoom-in}
+        figcaption{margin-top:.5rem;font-size:.75rem;line-height:1.375;color:var(--cream-muted);text-align:center}
+        @media(min-width:768px){.fig figcaption{text-align:left}}
+        figcaption .t{font-style:italic;color:var(--gold-light)}
+        .ul{color:var(--gold-light);text-decoration:underline;text-underline-offset:2px}
+        .ul:hover{color:var(--cream)}
+        .txt2{hyphens:auto;-webkit-hyphens:auto}
+        @media(min-width:768px){.txt2{columns:2;column-gap:2.5rem;flex:1 1 0%;min-width:0;text-align:justify}}
+        .txt2 p{margin-bottom:1.25rem}
+        .txt2 p:last-child{margin-bottom:0}
+        .txt2 em,.em{color:var(--gold-light)}
+        .drop-cap::first-letter{font-family:'Playfair Display',serif;float:left;font-size:3.4rem;line-height:.8;padding-top:4px;padding-right:12px;padding-bottom:2px;color:var(--gold);font-weight:700;text-shadow:1px 1px 2px rgba(0,0,0,.8)}
+        .aut-grid{display:grid;grid-template-columns:1fr;gap:2rem;align-items:center}
+        @media(min-width:768px){.aut-grid{grid-template-columns:repeat(3,1fr)}.aut-grid .side{grid-column:span 1}.aut-grid .bio{grid-column:span 2}}
+        .side{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:1.5rem;background:#16120f;border:1px solid rgba(201,162,75,.3);border-radius:2px;text-align:center;height:100%}
+        .side .fig{max-width:260px;margin:0 0 1.25rem}
+        .side .frame img{aspect-ratio:3/4;object-fit:cover;object-position:top}
+        .side .fig figcaption{text-align:center}
+        .side h4{font-family:'Cinzel',serif;font-size:1rem;line-height:1.5rem;text-transform:uppercase;letter-spacing:.1em;font-weight:700;color:var(--cream);margin-bottom:.25rem}
+        .dates{font-family:'Cinzel',serif;font-size:.875rem;line-height:1.25rem;color:var(--gold);letter-spacing:.05em;margin-bottom:.5rem}
+        .rule{width:3rem;height:1px;background:rgba(201,162,75,.4);margin:.5rem 0}
+        .it{font-style:italic;font-size:.875rem;line-height:1.25rem;color:var(--cream-muted)}
+        .vil{font-size:.75rem;line-height:1rem;color:var(--gold);margin-top:.75rem}
+        .lnk{display:inline-block;font-family:'Cinzel',serif;font-size:11px;line-height:1rem;text-transform:uppercase;letter-spacing:.1em;color:var(--gold-light);text-decoration:underline;text-underline-offset:4px}
+        .lnk:hover{color:var(--cream)}
+        .lnk.sm{font-size:10px}
+        .side .lnk{margin-top:1rem}
+        .bio>*+*{margin-top:1rem}
+        .bio p{font-size:1.125rem;line-height:1.625;color:var(--cream-muted)}
+        .bio p.drop-cap{font-size:1.25rem}
+        @media(min-width:640px){.bio p{font-size:1.25rem;line-height:1.75rem}.bio p.drop-cap{font-size:1.5rem;line-height:1.625}}
+        @media(min-width:768px){.bio{text-align:justify}}
+
+        /* Griglie e card */
+        .grid{display:grid;gap:1.5rem;grid-template-columns:1fr}
+        .grid>*{min-width:0}
+        @media(min-width:768px){.g3,.g4{grid-template-columns:repeat(2,1fr)}}
+        @media(min-width:1024px){.g3{grid-template-columns:repeat(3,1fr)}.g4{grid-template-columns:repeat(4,1fr)}}
+        .card{background:var(--bg-card);padding:1.5rem;border:1px solid rgba(201,162,75,.3);border-radius:2px;display:flex;flex-direction:column;justify-content:space-between;position:relative}
+        .card h4{font-family:'Playfair Display',serif;font-size:1.25rem;line-height:1.75rem;font-weight:700;color:var(--cream)}
+        .ch{display:flex;align-items:center;justify-content:space-between;margin-bottom:.75rem;color:var(--gold)}
+        .cy{font-family:'Cinzel',serif;font-size:1rem;line-height:1.5rem;font-weight:700;letter-spacing:.05em}
+        .cy.sm{font-size:.875rem;line-height:1.25rem}
+        .co{font-style:italic;font-size:1rem;line-height:1.5rem;color:var(--gold);margin-top:.25rem;margin-bottom:1rem}
+        .cn{font-size:1rem;color:var(--cream-muted);border-top:1px solid rgba(201,162,75,.15);padding-top:.75rem;line-height:1.625}
+        .cn+.lnk{margin-top:.75rem}
+        .bdg{display:inline-block;font-family:'Cinzel',serif;font-size:10px;line-height:1rem;text-transform:uppercase;letter-spacing:.1em;padding:.125rem .5rem;background:rgba(107,31,42,.4);color:var(--cream);border:1px solid rgba(201,162,75,.3);border-radius:4px}
+
+        /* Libri */
+        .search{max-width:48rem;margin:0 auto 2.5rem;background:var(--bg-card);padding:1rem;border:1px solid rgba(201,162,75,.3);border-radius:2px;box-shadow:0 20px 25px -5px rgba(0,0,0,.1),0 8px 10px -6px rgba(0,0,0,.1)}
+        @media(min-width:640px){.search{padding:1.5rem}}
+        .srow{display:flex;flex-direction:column;gap:1rem;align-items:center;justify-content:space-between}
+        @media(min-width:640px){.srow{flex-direction:row}}
+        .sbox{position:relative;width:100%}
+        @media(min-width:640px){.sbox{width:66.666%}}
+        .sbox .ic{position:absolute;left:.75rem;top:50%;transform:translateY(-50%);color:var(--gold)}
+        #q{width:100%;padding:.625rem 1rem .625rem 2.5rem;background:#120e0c;border:1px solid rgba(201,162,75,.4);border-radius:2px;font-size:1.125rem;line-height:1.75rem;color:var(--cream)}
+        #q::placeholder{color:rgba(201,162,75,.4)}
+        #q:focus{outline:none;border-color:var(--gold-light)}
+        #qclr{position:absolute;right:.75rem;top:50%;transform:translateY(-50%);font-size:.75rem;color:var(--gold)}
+        #qclr:hover{color:var(--cream)}
+        .pills{display:flex;align-items:center;gap:.5rem;width:100%;justify-content:center;flex-wrap:wrap}
+        @media(min-width:640px){.pills{width:auto}}
+        .pill{font-family:'Cinzel',serif;font-size:.75rem;line-height:1rem;text-transform:uppercase;padding:.375rem .75rem;border-radius:4px;border:1px solid rgba(201,162,75,.3);background:#120e0c;color:var(--cream-muted);transition:all .15s}
+        .pill:hover{border-color:var(--gold)}
+        .pill.on{background:var(--wine);color:var(--cream);border-color:var(--gold)}
+        .count{margin-top:.75rem;text-align:right;font-style:italic;font-size:.875rem;line-height:1.25rem;color:var(--gold)}
+        .bk{padding:1.5rem}
+        .bh{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:.75rem;border-bottom:1px solid rgba(201,162,75,.2);padding-bottom:.75rem}
+        .by{font-family:'Cinzel',serif;font-size:1.125rem;line-height:1.75rem;font-weight:700;color:var(--gold);letter-spacing:.05em}
+        .bti{margin-bottom:1rem}
+        .bti h4{line-height:1.375;margin-bottom:.25rem;transition:color .15s}
+        .bo{font-style:italic;font-size:1rem;line-height:1.5rem;color:var(--gold)}
+        .bn{font-size:1rem;line-height:1.625;color:var(--cream-muted);padding-top:.5rem;border-top:1px dashed rgba(201,162,75,.15)}
+        .cta{display:block;margin-top:.75rem;font-family:'Cinzel',serif;font-size:11px;line-height:1rem;text-transform:uppercase;letter-spacing:.1em;color:var(--gold-light)}
+        .click{cursor:pointer;transition:all .3s}
+        .click:hover{border-color:var(--gold);transform:translateY(-4px);box-shadow:0 20px 25px -5px rgba(107,31,42,.15),0 8px 10px -6px rgba(107,31,42,.15)}
+        .click:hover h4{color:var(--gold-light)}
+        .click:hover .cta{color:var(--cream)}
+        .click:focus-visible{outline:2px solid var(--gold-light);outline-offset:2px}
+        .empty{text-align:center;padding:4rem 1rem;background:var(--bg-card);border:1px dashed rgba(201,162,75,.3);max-width:28rem;margin:0 auto}
+        .empty p{font-style:italic;font-size:1.25rem;line-height:1.75rem;color:var(--cream-muted)}
+        .empty button{margin-top:1rem;font-family:'Cinzel',serif;font-size:.75rem;line-height:1rem;text-transform:uppercase;letter-spacing:.1em;color:var(--gold);text-decoration:underline}
+        .empty button:hover{color:var(--cream)}
+
+        /* Cinema e TV */
+        .sub{margin-bottom:4rem}
+        .sub-h{display:flex;align-items:center;gap:.75rem;margin-bottom:2rem;border-bottom:1px solid rgba(201,162,75,.3);padding-bottom:.75rem}
+        .sub-h .ic{width:1.5rem;height:1.5rem;color:var(--gold)}
+        .sub-h h3{font-family:'Cinzel',serif;font-size:1.25rem;line-height:1.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--gold-light)}
+        @media(min-width:640px){.sub-h h3{font-size:1.5rem;line-height:2rem}}
+        .c-cin{padding:1.25rem}
+        .c-cin h4{font-size:1.125rem;line-height:1.75rem;margin-bottom:.25rem}
+        .c-cin .cn{font-size:.875rem;padding-top:.5rem;line-height:1.625}
+        .zimg{width:100%;height:16rem;object-fit:contain;background:#120e0c;border:1px solid rgba(201,162,75,.4);padding:.25rem;margin-bottom:1rem;cursor:zoom-in}
+        .yr{font-family:'Cinzel',serif;font-size:.875rem;line-height:1.25rem;font-weight:700;color:var(--gold);margin-bottom:.25rem}
+        .imdb{margin-bottom:.5rem}
+        .og{font-style:italic;font-size:.875rem;line-height:1.25rem;color:var(--gold);margin-bottom:.5rem}
+        .dir{font-size:.875rem;line-height:1.25rem;color:var(--gold-light);font-weight:600;margin-bottom:.75rem}
+        .c-tv h4{margin-bottom:.25rem}
+        .c-tv .row{display:flex;align-items:center;justify-content:space-between;margin-bottom:.5rem}
+        .c-tv .row .cy{color:var(--gold)}
+        .c-tv .og{margin-bottom:.75rem}
+        .hon{margin-top:2rem;background:#181310;padding:1.5rem;border-left:4px solid var(--gold);border-top:1px solid rgba(201,162,75,.2);border-right:1px solid rgba(201,162,75,.2);border-bottom:1px solid rgba(201,162,75,.2)}
+        .hon h4{font-family:'Cinzel',serif;font-size:.875rem;line-height:1.25rem;text-transform:uppercase;letter-spacing:.1em;font-weight:700;color:var(--gold-light);margin-bottom:.5rem}
+        .hon p{font-size:1.125rem;line-height:1.625;color:var(--cream-muted)}
+        .hon strong{color:var(--cream)}
+        .hon p+p{margin-top:.75rem}
+
+        /* Radio, dischi, fumetti */
+        .c-rad h4{margin-bottom:.25rem}
+        .rtop{border-top:1px solid rgba(201,162,75,.15);padding-top:.75rem}
+        .rl{font-size:1rem;color:var(--cream-muted);line-height:1.625}
+        .rl li+li{margin-top:.25rem}
+        .lb{color:var(--gold-light);font-weight:600}
+        .rtop .lnk{margin-top:1rem}
+        .c-dis .co,.c-rad .co{margin-top:0}
+        .c-com h4{margin:.75rem 0 1rem}
+        .nw{white-space:nowrap}
+
+        /* Modale e lightbox */
+        .ov{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;padding:1rem}
+        #modal{z-index:60;background:rgba(0,0,0,.75);-webkit-backdrop-filter:blur(4px);backdrop-filter:blur(4px)}
+        .mbox{position:relative;width:100%;max-width:36rem;max-height:85vh;overflow-y:auto;background:var(--bg-card);border:2px solid rgba(201,162,75,.6);border-radius:2px;box-shadow:0 25px 50px -12px rgba(0,0,0,.25);padding:1.5rem}
+        @media(min-width:640px){.mbox{padding:2rem}}
+        .mclose{position:absolute;top:.75rem;right:.75rem;padding:.375rem;color:var(--gold);border:1px solid rgba(201,162,75,.4);border-radius:4px}
+        .mclose:hover{color:var(--cream)}
+        .mh{text-align:center;margin-bottom:1.25rem;padding-right:1.5rem}
+        .my{font-family:'Cinzel',serif;font-size:.875rem;line-height:1.25rem;font-weight:700;color:var(--gold);letter-spacing:.05em}
+        .mh h3{font-family:'Playfair Display',serif;font-size:1.5rem;line-height:1.375;font-weight:700;color:var(--cream);margin-top:.25rem}
+        .mh .mo{font-style:italic;font-size:1rem;line-height:1.5rem;color:var(--gold)}
+        .mh .dv{margin:1rem 0}
+        .ml li{display:flex;align-items:flex-start;gap:.75rem;border-bottom:1px dashed rgba(201,162,75,.15);padding-bottom:.75rem}
+        .ml li+li{margin-top:.75rem}
+        .mn{font-family:'Cinzel',serif;font-size:.875rem;line-height:1.25rem;font-weight:700;color:var(--gold);width:1.5rem;flex-shrink:0;padding-top:.125rem}
+        .mt{font-family:'Playfair Display',serif;font-size:1.125rem;line-height:1.375;font-weight:700;color:var(--cream)}
+        .mt .bdg{margin-left:.5rem;vertical-align:middle}
+        .mf{font-style:italic;font-size:1rem;line-height:1.5rem;color:var(--gold)}
+        #lb{z-index:70;flex-direction:column;background:rgba(0,0,0,.9);-webkit-backdrop-filter:blur(4px);backdrop-filter:blur(4px);cursor:zoom-out}
+        #lbx{position:absolute;top:1rem;right:1rem;padding:.5rem;color:var(--gold);border:1px solid rgba(201,162,75,.5);border-radius:4px;background:rgba(18,14,12,.8)}
+        #lbx:hover{color:var(--cream)}
+        #lbx .ic{width:1.5rem;height:1.5rem}
+        .lbf{padding:.375rem;border:1px solid rgba(201,162,75,.6);background:#120e0c;box-shadow:0 25px 50px -12px rgba(0,0,0,.25);cursor:default}
+        .lbf img{max-width:92vw;max-height:82vh;object-fit:contain}
+        #lbc{margin-top:.75rem;font-style:italic;font-size:1.125rem;line-height:1.75rem;color:var(--gold-light);text-align:center;max-width:42rem}
+
+        /* Footer */
+        footer{background:#0e0b09;border-top:2px solid rgba(201,162,75,.3);padding:3rem 1rem;text-align:center;position:relative}
+        @media(min-width:640px){footer{padding-left:1.5rem;padding-right:1.5rem}}
+        @media(min-width:1024px){footer{padding-left:2rem;padding-right:2rem}}
+        .f-in{max-width:56rem;margin:0 auto}
+        .f-in>*+*{margin-top:1.5rem}
+        .f-crown{display:flex;align-items:center;justify-content:center;gap:.75rem;color:var(--gold)}
+        .f-crown .ic{width:1.5rem;height:1.5rem}
+        footer h3{font-family:'Cinzel',serif;font-size:1.25rem;line-height:1.75rem;font-weight:700;letter-spacing:.1em;color:var(--cream)}
+        @media(min-width:640px){footer h3{font-size:1.5rem;line-height:2rem}}
+        .f-p{font-size:1.125rem;line-height:1.625;color:var(--cream-muted);max-width:36rem;margin-left:auto;margin-right:auto}
+        .f-p span{color:var(--gold-light)}
+        .f-line{height:1px;background:linear-gradient(to right,transparent,rgba(201,162,75,.4),transparent);width:100%;max-width:28rem;margin-left:auto;margin-right:auto}
+        .f-src{font-size:.875rem;line-height:1.625;color:rgba(201,162,75,.8)}
+        .f-src p+p,.f-src .cp{margin-top:.75rem}
+        .cp{font-family:'Cinzel',serif;font-size:.75rem;line-height:1rem;letter-spacing:.05em;color:rgba(216,206,184,.6)}
     </style>
 </head>
-<body class="antialiased selection:bg-[#6b1f2a] selection:text-[#f4ecd8]">
-    <div id="root"></div>
+<body>
+<!-- Icone (sprite SVG) -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <defs>
+        <symbol id="i-book" viewBox="0 0 24 24"><path d="M12 7v14"/><path d="M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"/></symbol>
+        <symbol id="i-feather" viewBox="0 0 24 24"><path d="M12.67 19a2 2 0 0 0 1.416-.588l6.154-6.172a6 6 0 0 0-8.49-8.49L5.586 9.914A2 2 0 0 0 5 11.328V18a1 1 0 0 0 1 1z"/><path d="M16 8 2 22"/><path d="M17.5 15H9"/></symbol>
+        <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></symbol>
+        <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></symbol>
+        <symbol id="i-x" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></symbol>
+        <symbol id="i-film" viewBox="0 0 24 24"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M7 3v18M3 7.5h4M3 12h18M3 16.5h4M17 3v18M17 7.5h4M17 16.5h4"/></symbol>
+        <symbol id="i-tv" viewBox="0 0 24 24"><rect width="20" height="15" x="2" y="7" rx="2" ry="2"/><polyline points="17 2 12 7 7 2"/></symbol>
+        <symbol id="i-theater" viewBox="0 0 24 24"><path d="M2 10s3-3 3-8"/><path d="M22 10s-3-3-3-8"/><path d="M10 2c0 4.4-3.6 8-8 8"/><path d="M14 2c0 4.4 3.6 8 8 8"/><path d="M2 10s2 11.5 10 11.5S22 10 22 10"/><path d="M8 15h.01M16 15h.01"/><path d="M9.5 18a3.5 3.5 0 0 0 5 0"/></symbol>
+        <symbol id="i-radio" viewBox="0 0 24 24"><path d="M4.9 19.1C1 15.2 1 8.8 4.9 4.9"/><path d="M7.8 16.2c-2.3-2.3-2.3-6.1 0-8.5"/><circle cx="12" cy="12" r="2"/><path d="M16.2 7.8c2.3 2.3 2.3 6.1 0 8.5"/><path d="M19.1 4.9C23 8.8 23 15.1 19.1 19"/></symbol>
+        <symbol id="i-disc" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M6 12c0-3.3 2.7-6 6-6"/><path d="M18 12c0 3.3-2.7 6-6 6"/><circle cx="12" cy="12" r="2"/></symbol>
+        <symbol id="i-palette" viewBox="0 0 24 24"><circle cx="13.5" cy="6.5" r=".5" fill="currentColor"/><circle cx="17.5" cy="10.5" r=".5" fill="currentColor"/><circle cx="8.5" cy="7.5" r=".5" fill="currentColor"/><circle cx="6.5" cy="12.5" r=".5" fill="currentColor"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"/></symbol>
+        <symbol id="i-crown" viewBox="0 0 24 24"><path d="M11.562 3.266a.5.5 0 0 1 .876 0L15.39 8.87a1 1 0 0 0 1.516.294L21.183 5.5a.5.5 0 0 1 .798.519l-2.834 10.246a1 1 0 0 1-.956.734H5.81a1 1 0 0 1-.957-.734L2.02 6.02a.5.5 0 0 1 .798-.519l4.276 3.664a1 1 0 0 0 1.516-.294z"/><path d="M5.21 20h13.58"/></symbol>
+    </defs>
+</svg>
 
-    <script type="text/babel" data-type="module" data-presets="react">
-        import React, { useState, useMemo, useEffect } from 'react';
-        import { createRoot } from 'react-dom/client';
-        import {
-            BookOpen,
-            Film,
-            Tv,
-            Theater,
-            Search,
-            Menu,
-            X,
-            Sparkles,
-            Feather,
-            Compass,
-            Image as ImageIcon,
-            ChevronDown,
-            Filter,
-            Crown,
-            ScrollText,
-            Clock,
-            Radio,
-            Disc3,
-            Palette
-        } from 'lucide-react';
+<div class="page">
+    <div class="topbar"></div>
 
-        // --- DATA CATALOGS ---
+    <!-- HEADER -->
+    <header class="hdr">
+        <div class="hdr-in">
+            <a href="#hero" class="brand">
+                <div class="logo">
+                    <svg viewBox="0 0 64 64" role="img" aria-label="Cilindro e monocolo">
+                        <path d="M21 38V15q0-3 3-3h16q3 0 3 3v23z" fill="#c9a24b"/>
+                        <rect x="21" y="28" width="22" height="5" fill="#120e0c"/>
+                        <rect x="11" y="37" width="42" height="6" rx="3" fill="#e5c378"/>
+                        <circle cx="43" cy="50" r="5" fill="none" stroke="#e5c378" stroke-width="2.2"/>
+                    </svg>
+                </div>
+                <div>
+                    <span class="brand-name">ARSÈNE LUPIN</span>
+                    <span class="brand-sub">Gentleman-Cambrioleur • 1905</span>
+                </div>
+            </a>
+            <nav class="nav" aria-label="Menu principale">
+                <a href="#hero">Home</a>
+                <a href="#biografia">Chi è Lupin</a>
+                <a href="#libri">I Libri</a>
+                <a href="#teatro">Teatro</a>
+                <a href="#film-tv">Cinema &amp; TV</a>
+                <a href="#radio">Radio</a>
+                <a href="#discografia">Dischi</a>
+                <a href="#fumetti">Fumetti</a>
+            </nav>
+            <button id="burger" class="burger" aria-label="Apri menu" aria-expanded="false" aria-controls="mmenu">
+                <svg class="ic i-menu"><use href="#i-menu"/></svg>
+                <svg class="ic i-x"><use href="#i-x"/></svg>
+            </button>
+        </div>
+        <div id="mmenu" class="mmenu">
+            <a href="#hero">Home</a>
+            <a href="#biografia">Chi è Lupin</a>
+            <a href="#libri">I Libri</a>
+            <a href="#teatro">Teatro</a>
+            <a href="#film-tv">Cinema &amp; TV</a>
+            <a href="#radio">Radio</a>
+            <a href="#discografia">Dischi</a>
+            <a href="#fumetti">Fumetti</a>
+        </div>
+    </header>
 
-        const BOOKS = [
-            { year: 1907, original: "Arsène Lupin, gentleman-cambrioleur", italian: "Arsenio Lupin, ladro gentiluomo", type: "Raccolta di 9 racconti", note: "La celebre opera d’esordio che raccoglie i primi racconti usciti su «Je Sais Tout».", stories: [["L’arresto di Arsenio Lupin","L’arrestation d’Arsène Lupin"],["Arsenio Lupin in prigione","Arsène Lupin en prison"],["L’evasione di Arsenio Lupin","L’évasion d’Arsène Lupin"],["Il misterioso viaggiatore","Le mystérieux voyageur"],["La collana della regina","Le collier de la reine"],["Il Sette di Cuori","Le Sept de Cœur"],["La cassaforte di madame Imbert","Le coffre-fort de madame Imbert"],["La perla nera","La perle noire"],["Herlock Sholmes arriva troppo tardi","Herlock Sholmès arrive trop tard"]] },
-            { year: 1908, original: "Arsène Lupin contre Herlock Sholmès", italian: "Arsenio Lupin contro Herlock Sholmes", type: "Raccolta / Romanzo", note: "Il leggendario scontro con la celebre parodia del detective britannico di Conan Doyle.", cta: "Vedi i due episodi", contentsTitle: "Un romanzo e un racconto", stories: [["La donna bionda","La dame blonde","Romanzo"],["La lampada ebraica","La lampe juive","Racconto"]] },
-            { year: 1909, original: "L’Aiguille creuse", italian: "Il faraglione cavo", type: "Romanzo", note: "Noto anche come «La guglia cava» o «Il segreto della guglia». Capolavoro indiscusso." },
-            { year: 1910, original: "813", italian: "813", type: "Romanzo", note: "Riedito nel 1917 in due tomi: «La doppia vita di Arsenio Lupin» e «I tre delitti di Arsenio Lupin».", cta: "Vedi i due volumi del 1917", contentsTitle: "Rieditato nel 1917 in due volumi", stories: [["La doppia vita di Arsenio Lupin","La double vie d’Arsène Lupin","Volume I"],["I tre delitti di Arsenio Lupin","Les trois crimes d’Arsène Lupin","Volume II"]] },
-            { year: 1912, original: "Le bouchon de cristal", italian: "Il tappo di cristallo", type: "Romanzo", note: "Ispirato al noto scandalo di Panama; uno dei romanzi più drammatici della saga." },
-            { year: 1912, original: "L’homme à la peau de bique", italian: "L’uomo con la pelle di capra", type: "Racconto", note: "Pubblicato inizialmente su rivista negli Stati Uniti prima dell’edizione francese." },
-            { year: 1913, original: "Les confidences d’Arsène Lupin", italian: "Le confidenze di Arsenio Lupin", type: "Raccolta di 9 racconti", note: "Nove brillanti avventure retrospettive narrate dal ladro gentiluomo.", stories: [["Giochi di sole","Les jeux du soleil"],["L’anello nuziale","L’anneau nuptial"],["Il segno dell’ombra","Le signe de l’ombre"],["La trappola infernale","Le piège infernal"],["La sciarpa di seta rossa","L’écharpe de soie rouge"],["La morte in agguato","La mort qui rôde"],["Edith dal Collo di Cigno","Edith au Cou de Cygne"],["La festuca di paglia","Le fétu de paille"],["Il matrimonio di Arsenio Lupin","Le mariage d’Arsène Lupin"]] },
-            { year: 1916, original: "L’Éclat d’obus", italian: "La scheggia d’obice", type: "Romanzo", note: "Ambientato durante la Prima guerra mondiale; apparizione cameo di Lupin." },
-            { year: 1918, original: "Le Triangle d’or", italian: "Il triangolo d’oro", type: "Romanzo", note: "Un intrigo patriottico ed economico all’ombra della Grande Guerra." },
-            { year: 1919, original: "L’Ile aux Trente Cercueils", italian: "L’Isola delle Trenta Bare", type: "Romanzo", note: "Toni gotici, leggende celtiche e misteri sulla remota isola bretone di Sarek." },
-            { year: 1921, original: "Les Dents du Tigre", italian: "I denti della Tigre", type: "Romanzo", note: "Lupin torna sotto l’identità di Don Luis Perenna per risolvere un’eredità insanguinata." },
-            { year: 1923, original: "Les huit coups de l’horloge", italian: "Gli otto rintocchi del pendolo", type: "Raccolta di 8 racconti", note: "Lupin, nei panni del principe Rénine, risolve otto enigmi con la giovane Hortense.", stories: [["In cima alla torre","Au sommet de la tour"],["La caraffa d’acqua","La carafe d’eau"],["Thérèse e Germaine","Thérèse et Germaine"],["Il film rivelatore","Le film révélateur"],["Il caso di Jean-Louis","Le cas de Jean-Louis"],["La signora con l’ascia","La dame à la hache"],["Passi sulla neve","Des pas sur la neige"],["Al dio Mercurio","Au dieu Mercure"]] },
-            { year: 1924, original: "La comtesse de Cagliostro", italian: "La contessa di Cagliostro", type: "Romanzo", note: "La giovinezza di Lupin (Raoul d’Andrésy) e la sua prima grande nemica/amante." },
-            { year: 1926, original: "Le pardessus d’Arsène Lupin", italian: "Il soprabito di Arsenio Lupin", type: "Racconto", note: "Breve racconto investigativo pubblicato sul periodico «Le Journal»." },
-            { year: 1927, original: "La demoiselle aux yeux verts", italian: "La signorina dagli occhi verdi", type: "Romanzo", note: "Un inseguimento amoroso e investigativo attraverso le province francesi." },
-            { year: 1928, original: "L’agence Barnett et Cie", italian: "L’agenzia Barnett et Cie", type: "Raccolta di 8 racconti", note: "Lupin assume l’identità del detective privato Jim Barnett.", stories: [["Le gocce che cadono","Les gouttes qui tombent"],["La lettera d’amore di re George","La lettre d’amour du roi George"],["La partita di baccarà","La partie de baccara"],["L’uomo dai denti d’oro","L’homme aux dents d’or"],["Le dodici Africane di Béchoux","Les douze Africaines de Béchoux"],["Il caso fa miracoli","Le hasard fait des miracles"],["Guanti bianchi... gambali bianchi","Gants blancs... guêtres blanches"],["Béchoux arresta Jim Barnett","Béchoux arrête Jim Barnett"]] },
-            { year: 1929, original: "Le pont qui s’effondre", italian: "Il ponte che crolla", type: "Racconto", note: "Pubblicato sulla rivista «L’Émulation» di Rouen." },
-            { year: 1929, original: "La demeure mystérieuse", italian: "La dimora misteriosa", type: "Romanzo", note: "Il furto dei diamanti di un’attrice e il rapimento all’Opera di Parigi." },
-            { year: 1930, original: "Le cabochon d’émeraude", italian: "Lo smeraldo a cabochon", type: "Racconto", note: "Noto anche come «L’anello di smeraldo», incentrato su un raffinato enigma matrimoniale." },
-            { year: 1931, original: "La Barre-Y-Va", italian: "La Barre-Y-Va", type: "Romanzo", note: "Misteri e vecchie vendette in un maniero di campagna in Normandia." },
-            { year: 1933, original: "La femme aux deux sourires", italian: "La donna dai due sorrisi", type: "Romanzo", note: "Un’avventura intricata che intreccia furti di quadri e identità segrete." },
-            { year: 1933, original: "Victor, de la Brigade Mondaine", italian: "Victor, de la Brigade Mondaine", type: "Romanzo", note: "Lupin si infiltra nella polizia parigina come ispettore capo." },
-            { year: 1935, original: "La Cagliostro se venge", italian: "La contessa di Cagliostro si vendica", type: "Romanzo", note: "Il ritorno dell’antica e spietata rivale di gioventù di Arsène." },
-            { year: 1941, original: "Les milliards d’Arsène Lupin", italian: "I miliardi di Arsenio Lupin", type: "Romanzo postumo", note: "Pubblicato a puntate su «L’Auto» prima della morte dell’autore e in volume postumo." },
-            { year: 2012, original: "Le dernier amour d’Arsène Lupin", italian: "L’ultimo amore di Arsenio Lupin", type: "Romanzo postumo", note: "Manoscritto riscoperto scritto intorno al 1936 e pubblicato dagli eredi Leblanc." }
-        ];
+    <main>
+        <!-- 1. HERO -->
+        <section id="hero" class="sec">
+            <div class="hero-box">
+                <div class="corner" style="top:-.75rem;left:-.75rem">╔</div>
+                <div class="corner" style="top:-.75rem;right:-.75rem">╗</div>
+                <div class="corner" style="bottom:-.75rem;left:-.75rem">╚</div>
+                <div class="corner" style="bottom:-.75rem;right:-.75rem">╝</div>
+                <div class="badge-hero"><span>Édition Belle Époque • Année 1905</span></div>
+                <h1>Arsène Lupin</h1>
+                <p class="hero-sub">Il Ladro Gentiluomo</p>
+                <div class="hero-rule"></div>
+                <p class="hero-txt">Nato dalla penna raffinata di <span class="who">Maurice Leblanc</span> nel 1905 sulle pagine della celebre rivista parigina <em>«Je Sais Tout»</em>. Maestro del travestimento, paladino dell’ingegno, ironico e inafferrabile custode dei più reconditi segreti di Francia.</p>
+                <div class="hero-btns">
+                    <a class="btn b1" href="#libri"><svg class="ic"><use href="#i-book"/></svg><span>I Romanzi e i Racconti</span></a>
+                    <a class="btn b2" href="#biografia"><svg class="ic"><use href="#i-feather"/></svg><span>Chi è Lupin</span></a>
+                </div>
+            </div>
+        </section>
 
-        const THEATER = [
-            { year: 1908, original: "Arsène Lupin", italian: "Arsenio Lupin", url: "https://fr.wikipedia.org/wiki/Ars%C3%A8ne_Lupin_(pi%C3%A8ce_de_th%C3%A9%C3%A2tre)", notes: "Scritta in collaborazione con Francis De Croisset. Trionfo assoluto al Théâtre de l’Athénée di Parigi." },
-            { year: 1911, original: "Une aventure d’Arsène Lupin", italian: "Un’avventura di Arsenio Lupin", url: "https://fr.wikipedia.org/wiki/Une_aventure_d%27Ars%C3%A8ne_Lupin", notes: "Dramma teatrale in un atto scritto da Maurice Leblanc." },
-            { year: 1920, original: "Le retour d’Arsène Lupin", italian: "Il ritorno di Arsenio Lupin", url: "https://fr.wikipedia.org/wiki/Le_Retour_d%27Ars%C3%A8ne_Lupin_(pi%C3%A8ce_de_th%C3%A9%C3%A2tre)", notes: "Scritta nuovamente a quattro mani con Francis De Croisset." },
-            { year: 1930, original: "Cette femme est à moi", italian: "Questa donna è mia", url: "https://fr.wikipedia.org/wiki/Cette_femme_est_%C3%A0_moi", notes: "Commedia scritta negli anni Trenta ma mai rappresentata in scena; pubblicata solo postuma nel 2015 dall’Association des Amis d’Arsène Lupin." },
-            { year: 1932, original: "Un quart d’heure avec Arsène Lupin", italian: "Un quarto d’ora con Arsenio Lupin", url: "https://fr.wikipedia.org/wiki/Un_quart_d%27heure_avec_Ars%C3%A8ne_Lupin", notes: "Breve atto unico radiofonico/teatrale di Maurice Leblanc." }
-        ];
+        <!-- 2. CHI È LUPIN -->
+        <section id="biografia" class="sec">
+            <div class="sh">
+                <div class="so">⚜</div>
+                <h2>Genesi &amp; Mito del Ladro Gentiluomo</h2>
+                <p class="ss">Dalla Parigi di inizio Novecento all’immaginario collettivo universale</p>
+                <div class="dv"><span class="dl"></span><span class="dm"><span class="s1">✦</span><span class="s2">❦</span><span class="s1">✦</span></span><span class="dr"></span></div>
+            </div>
 
-        const CINEMA = [
-            { year: 1908, img: "images/the_gentleman_burglar_1908.jpg", original: "The Gentleman Burglar", italian: "The Gentleman Burglar", director: "Edwin S. Porter", imdb: "https://www.imdb.com/title/tt0366510/", notes: "Produzione statunitense, con William Ranous nel ruolo di Lupin." },
-            { year: 1910, img: "images/arsene_lupin_contre_herlock_sholmes_1910.jpg", original: "Arsène Lupin contra Sherlock Holmes", italian: "Arsène Lupin contra Sherlock Holmes", director: "Viggo Larsen", imdb: "https://www.imdb.com/title/tt1163741/", notes: "Produzione tedesca in cinque episodi, con Paul Otto nel ruolo di Lupin." },
-            { year: 1914, img: "images/arsene_lupin_1914.jpg", original: "Arsène Lupin", italian: "Arsenio Lupin", director: "Émile Chautard", imdb: "https://www.imdb.com/title/tt0461463/", notes: "Produzione francese, con Georges Tréville nel ruolo di Lupin." },
-            { year: 1915, img: "images/the_gentelman_burglar_1915.jpg", original: "The Gentleman Burglar", italian: "The Gentleman Burglar", director: "E. A. Martin", imdb: "https://www.imdb.com/title/tt1179851/", notes: "Produzione statunitense, con William Stowell nel ruolo di Lupin." },
-            { year: 1919, img: "images/the_teeth_of_the_tiger_1919.jpg", original: "The Teeth of the Tiger", italian: "The Teeth of the Tiger", director: "Chester Withey", imdb: "https://www.imdb.com/title/tt0010761/", notes: "Pellicola muta statunitense tratta dall’omonimo romanzo." },
-            { year: 1920, img: "images/813_1920.jpg", original: "813-Arsene Lupin", italian: "813-Arsene Lupin", director: "Scott F. Sidney", imdb: "https://www.imdb.com/title/tt0010942/", notes: "Produzione statunitense, con Wedgwood Nowell nel ruolo di Lupin." },
-            { year: 1921, img: "images/arsen_lupin_utolso_kalandja_1921.jpg", imgAlt: "Ritratto del regista Paul Fejos", imgCaption: "Paul Fejos, regista di Arsen Lupin utolso kalandja (1921)", original: "Arsen Lupin utolso kalandja", italian: "Arsen Lupin utolso kalandja", director: "Paul Fejos", imdb: "https://www.imdb.com/title/tt0011931/", notes: "Produzione ungherese, con Gusztav Partos nel ruolo di Lupin. Nella foto: il regista Paul Fejos." },
-            { year: 1923, img: "images/813-Rupimono_1923.jpg", original: "813-Rupimono", italian: "813-Rupimono", director: "Kenji Mizoguchi", imdb: "https://www.imdb.com/title/tt0013812/", notes: "Produzione giapponese, con Minami Kômei nel ruolo di Lupin." },
-            { year: 1928, img: "images/vom_taeter_fehlt_jede_spur_1928.jpg", original: "Vom Täter fehlt jede Spur", italian: "Vom Täter fehlt jede Spur", director: "Constantin J. David", imdb: "https://www.imdb.com/title/tt0438569/", notes: "Produzione tedesca, con Kurt Gerron nel ruolo di Lupin (nel film chiamato Arsène Dupin)." },
-            { year: 1932, img: "images/arsenio_lupin_1932.jpg", original: "Arsène Lupin", italian: "Arsenio Lupin", director: "Jack Conway", imdb: "https://www.imdb.com/title/tt0022639/", notes: "Produzione MGM con John Barrymore e Lionel Barrymore." },
-            { year: 1937, img: "images/arsene_lupin_detective_1937.jpg", original: "Arsène Lupin détective", italian: "Arsène Lupin détective", director: "Henri Diamant-Berger", imdb: "https://www.imdb.com/title/tt0143116/", notes: "Produzione francese, con Jules Berry nel ruolo di Lupin." },
-            { year: 1938, img: "images/arsene_lupin_returns_1938.jpg", original: "Arsène Lupin Returns", italian: "Arsène Lupin Returns", director: "George Fitzmaurice", imdb: "https://www.imdb.com/title/tt0029884/", notes: "Produzione statunitense, con Melvyn Douglas nel ruolo di Lupin." },
-            { year: 1944, img: "images/enter_arsene_lupin_1944.jpg", original: "Enter Arsene Lupin", italian: "Enter Arsene Lupin", director: "Ford L. Beebe", imdb: "https://www.imdb.com/title/tt0036794/", notes: "Produzione statunitense, con Melvyn Douglas nel ruolo di Lupin." },
-            { year: 1947, img: "images/arsenio_lupin_1947.jpg", original: "Arsenio Lupin", italian: "Arsenio Lupin", director: "Ramon Peon", imdb: "https://www.imdb.com/title/tt0139860/", notes: "Produzione messicana, con Ramon Pereda nel ruolo di Lupin." },
-            { year: 1947, img: "images/el_inspector_victor_contra_arsenio_lupin_1947.jpg", original: "El Inspector Victor contra Arsenio Lupin", italian: "El Inspector Victor contra Arsenio Lupin", director: "Ramon Peon", imdb: "https://www.imdb.com/title/tt0140286/", notes: "Produzione messicana, con Ramon Pereda nel ruolo di Lupin." },
-            { year: 1957, img: "images/le_avventure_arsenio_lupin_1957.jpg", original: "Les Aventures d’Arsène Lupin", italian: "Le avventure di Arsenio Lupin", director: "Jacques Becker", imdb: "https://www.imdb.com/title/tt0050152/", notes: "Con Robert Lamoureux nel ruolo di Lupin." },
-            { year: 1959, img: "images/il_ritorno_arsenio_lupin_1959.jpg", original: "Signé: Arsène Lupin", italian: "Il ritorno di Arsenio Lupin", director: "Yves Robert", imdb: "https://www.imdb.com/title/tt0052578/", notes: "Robert Lamoureux riprende il ruolo del celebre ladro." },
-            { year: 1962, img: "images/arsenio_lupin_contro_arsenio_lupin_1962.jpg", original: "Arsène Lupin contre Arsène Lupin", italian: "Arsenio Lupin contro Arsenio Lupin", director: "Édouard Molinaro", imdb: "https://www.imdb.com/title/tt0055759/", notes: "Commedia con Jean-Claude Brialy e Jean-Pierre Cassel." },
-            { year: 1979, img: "images/lupin_III_il_castello_di_cagliostro_1979.jpg", original: "Rupan sansei: Kariosutoro no shiro", italian: "Lupin III – Il castello di Cagliostro", director: "Hayao Miyazaki", imdb: "https://www.imdb.com/title/tt0079833/", notes: "Film d’animazione dedicato a Lupin III, con la voce di Yasuo Yamada nel ruolo del protagonista." },
-            { year: 2004, img: "images/arsenio_lupin_2004.jpg", original: "Arsène Lupin", italian: "Arsenio Lupin", director: "Jean-Paul Salomé", imdb: "https://www.imdb.com/title/tt0373690/", notes: "Produzione franco-italo-spagnola con Romain Duris, Kristin Scott Thomas ed Eva Green." },
-        ];
-
-        const TELEVISION = [
-            { year: "1971–1974", img: "images/arsenio_lupin_1971.jpg", original: "Arsène Lupin", italian: "Arsenio Lupin", imdb: "https://www.imdb.com/title/tt0136713/", notes: "Serie franco-europea con Georges Descrières nel ruolo di Lupin." },
-            { year: "1980", img: "images/arsene_lupin_joue_et_perd_1980.jpg", original: "Arsène Lupin joue et perd", italian: "Arsène Lupin joue et perd", imdb: "https://www.imdb.com/title/tt0198056/", notes: "Miniserie televisiva francese con Jean-Claude Brialy." },
-            { year: "1989–1996", img: "images/il_ritorno_arsenio_lupin_1989.jpg", original: "Le Retour d’Arsène Lupin", italian: "Il ritorno di Arsenio Lupin", imdb: "https://www.imdb.com/title/tt0096689/", notes: "Serie televisiva con François Dunoyer nel ruolo del protagonista." },
-            { year: "1996", img: "images/les_exploits_de_arsene_lupin_1996.jpg", original: "Les exploits d’Arsène Lupin", italian: "Les exploits d’Arsène Lupin", imdb: "https://www.imdb.com/it/title/tt0115293/", notes: "Serie animata franco-canadese prodotta da Cinar e France-Animation (26 episodi)." },
-            { year: "2021–oggi", img: "images/lupin_2021.jpg", original: "Lupin", italian: "Lupin", imdb: "https://www.imdb.com/it/title/tt2531336/", notes: "Serie Netflix con Omar Sy nel ruolo di Assane Diop." }
-        ];
-
-        const RADIO = [
-            { years: "marzo 1960 – luglio 1961", title: "Arsène Lupin", broadcaster: "France Inter", creator: "Abder Isker", adaptation: "Jean Marcillac", voice: "Michel Roux", url: "https://podcasts.ina.fr/main/pub/emission/15163-Les-Aventures-d-Ars%C3%A8ne-Lupin" }
-        ];
-
-        const DISCOGRAPHY = [
-            { title: "La Demeure mystérieuse", text: "Testo ridotto", discs: "3 cd", label: "Livraphone", code: "LIV 7014", year: 2001 },
-            { title: "L’Aiguille creuse", text: "Testo integrale", discs: "6 cd", label: "Livraphone", code: "LIV167C", year: 2004 },
-            { title: "La demoiselle aux yeux verts", text: "Testo integrale", discs: "6 cd", label: "Livraphone", ean: "3358950000197", year: 2004 },
-            { title: "La Barre y va", text: "Testo integrale", discs: "5 cd", label: "Livraphone", ean: "3358950000319", year: 2004 }
-        ];
-
-        const COMICS_INFO = { adapter: "André-Paul Duchâteau", publisher: "Claude Lefrancq Éditeur, Bruxelles" };
-
-        const COMICS = [
-            { n: 1, title: "Le bouchon de cristal", artist: "Jacques Géron", year: 1989 },
-            { n: 2, title: "813: la double vie", artist: "Jacques Géron", year: 1990 },
-            { n: 3, title: "813: les trois crimes", artist: "Jacques Géron", year: 1991 },
-            { n: 4, title: "La demoiselle aux yeux verts", artist: "Jacques Géron", year: 1992 },
-            { n: 5, title: "Victor de la Brigade Mondaine", artist: "Erwin Drèze", year: 1992 },
-            { n: 6, title: "L’Aiguille creuse", artist: "Jacques Géron", year: 1994 }
-        ];
-
-        // --- ORNAMENTAL COMPONENTS ---
-
-        function VintageDivider({ text, className = "" }) {
-            return (
-                <div className={`flex items-center justify-center my-8 ${className}`}>
-                    <div className="h-px bg-gradient-to-r from-transparent via-[#c9a24b]/50 to-[#c9a24b] w-16 sm:w-28"></div>
-                    <div className="mx-4 flex items-center space-x-2 text-[#c9a24b]">
-                        <span className="text-xs">✦</span>
-                        {text && (
-                            <span className="font-cinzel text-xs uppercase tracking-[0.25em] text-[#e5c378] font-bold">
-                                {text}
-                            </span>
-                        )}
-                        <span className="text-sm font-serif">❦</span>
-                        <span className="text-xs">✦</span>
+            <div class="blk b-mito">
+                <div class="lab">1. LA CREAZIONE</div>
+                <h3>La nascita di un mito: Arsène Lupin</h3>
+                <div class="mito-in">
+                    <figure class="fig">
+                        <div class="frame">
+                            <img class="zoom" src="images/lupin_copertina_1907.png" alt="Copertina di Arsène Lupin, gentleman-cambrioleur (1907), illustrazione di Léo Fontan" data-cap="Copertina di Arsène Lupin, gentleman-cambrioleur (1907) — Illustrazione di Léo Fontan — CC0 (pubblico dominio)" loading="lazy" title="Clicca per ingrandire" style="filter:sepia(.1)">
+                        </div>
+                        <figcaption>
+                            <span class="t">Copertina di Arsène Lupin, gentleman-cambrioleur (1907)</span><br>
+                            Illustrazione di Léo Fontan<br>
+                            Licenza: <a class="ul" href="https://creativecommons.org/publicdomain/zero/1.0/deed.en" target="_blank" rel="noopener noreferrer">CC0 (pubblico dominio) ↗</a><br>
+                            Fonte: <a class="ul" href="https://commons.wikimedia.org/w/index.php?curid=68610259" target="_blank" rel="noopener noreferrer">Wikimedia Commons ↗</a>
+                        </figcaption>
+                    </figure>
+                    <div class="txt2" lang="it">
+                        <p class="drop-cap">Arsène Lupin è un personaggio di fantasia francese, creato da Maurice Leblanc. Questo ladro gentiluomo è particolarmente noto per la sua abilità nell’utilizzare travestimenti, trucchi e identità multiple per commettere crimini e risolvere casi.</p>
+                        <p>L’eroe appare per la prima volta nel racconto <em>L’arresto di Arsenio Lupin</em>, pubblicato sulla rivista <em>Je sais tout</em> nel luglio del 1905. Il suo creatore, Maurice Leblanc, incluse questo racconto nella raccolta <em>Arsenio Lupin, ladro gentiluomo</em>, pubblicata nel 1907. Considerato il grande successo riscosso dal personaggio tra i lettori, le sue avventure sono state pubblicate in diciassette romanzi, trentanove racconti e cinque opere teatrali dal 1905 fino alla morte dell’autore, avvenuta nel 1941.</p>
+                        <p>Le sue numerose avventure sono ambientate in Francia durante la Belle Époque e i ruggenti anni Venti, periodi in cui Arsène Lupin riflette l’evoluzione del pensiero dell’autore: le simpatie anarchiche di Lupin scompaiono nei romanzi scritti durante la Prima guerra mondiale, periodo in cui il personaggio diventa profondamente patriottico. Inoltre, smette gradualmente di essere un ladro per diventare un detective. Oltre a essere un atleta e un combattente esperto, Lupin possiede un talento innato per il travestimento e una grande astuzia, qualità che sfrutta per risolvere enigmi di ogni tipo.</p>
+                        <p>Così lo presenta il suo «amico-biografo» ne <em>L’arresto di Arsenio Lupin</em>, in <em>Arsenio Lupin, ladro gentiluomo</em> (1907): “Il suo ritratto? Come potrei farlo? Venti volte ho visto Arsène Lupin, e venti volte è apparsa davanti a me una persona diversa o, piuttosto, la stessa persona di cui venti specchi mi avrebbero rinviato altrettante immagini deformate [...]. «Io stesso», mi disse, «non so più bene chi io sia. In uno specchio non mi riconosco più». [...] E precisa, con una punta d’orgoglio: «Tanto meglio se non si può mai dire in tutta certezza: “Ecco Arsène Lupin”. L’essenziale è che si dica senza timore di sbagliare: “Arsène Lupin ha fatto questo”»”</p>
+                        <p>La sua natura infantile e affascinante, spesso beffarda, unita a un carattere tormentato e misterioso, lo ha reso una figura popolare, incarnando il ladro gentiluomo della Belle Époque. La sua fama internazionale ha dato vita ad adattamenti cinematografici americani e a manga realizzati da autori giapponesi. Il suo nome è inoltre legato alla città francese di Étretat, in Normandia, che è al centro di diverse sue avventure, come <em>«Il faraglione cavo»</em>, contribuendo così al mito che circonda il luogo.</p>
                     </div>
-                    <div className="h-px bg-gradient-to-r from-[#c9a24b] via-[#c9a24b]/50 to-transparent w-16 sm:w-28"></div>
                 </div>
-            );
-        }
+            </div>
 
-        function SectionHeading({ title, subtitle, ornament = "⚜" }) {
-            return (
-                <div className="text-center mb-12">
-                    <div className="text-[#c9a24b] text-xl mb-1">{ornament}</div>
-                    <h2 className="font-playfair text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-[#f4ecd8] drop-shadow-md">
-                        {title}
-                    </h2>
-                    {subtitle && (
-                        <p className="font-garamond italic text-lg sm:text-xl text-[#c9a24b] mt-2 max-w-2xl mx-auto">
-                            {subtitle}
-                        </p>
-                    )}
-                    <VintageDivider />
+            <div class="blk b-aut">
+                <div class="lab">2. L’AUTORE</div>
+                <h3>Maurice Leblanc: vita dell’autore</h3>
+                <div class="aut-grid">
+                    <div class="side">
+                        <figure class="fig">
+                            <div class="frame">
+                                <img class="zoom" src="images/maurice_leblanc.jpg" alt="Ritratto di Maurice Leblanc, 1907" data-cap="Maurice Leblanc, 1907 — Foto di Henri Manuel" title="Clicca per ingrandire" style="filter:sepia(.15)">
+                            </div>
+                            <figcaption>
+                                <span class="t">Maurice Leblanc, 1907</span><br>
+                                Foto di Henri Manuel<br>
+                                Licenza: <a class="ul" href="https://creativecommons.org/publicdomain/mark/1.0/" target="_blank" rel="noopener noreferrer">Di pubblico dominio (Public domain) ↗</a>
+                            </figcaption>
+                        </figure>
+                        <h4>Maurice Leblanc</h4>
+                        <span class="dates">1864 – 1941</span>
+                        <div class="rule"></div>
+                        <p class="it">Scrittore &amp; Giornalista<br>Légion d’Honneur (1908)</p>
+                        <p class="vil">Villa «Le Clos Lupin»<br>Étretat, Normandia</p>
+                        <a class="lnk sm" href="https://it.wikipedia.org/wiki/Maurice_Leblanc" target="_blank" rel="noopener noreferrer">Approfondisci su Wikipedia: Maurice Leblanc ↗</a>
+                    </div>
+                    <div class="bio">
+                        <p class="drop-cap">Maurice Marie Émile Leblanc nacque a Rouen, in Normandia, l’11 dicembre 1864, secondo figlio di una famiglia agiata e colta. Rifiutando la carriera che il padre aveva immaginato per lui in una fabbrica di carte da gioco, si trasferì a Parigi nel 1888 per dedicarsi alla scrittura, lavorando come giornalista e pubblicando romanzi di costume di ispirazione naturalista; da adolescente aveva peraltro frequentato, a Rouen, Gustave Flaubert e Guy de Maupassant.</p>
+                        <p>La sua vita cambiò per sempre nel 1905, quando l’editore Pierre Lafitte gli commissionò un racconto per la nuova rivista <em>«Je Sais Tout»</em>: nacque così Arsène Lupin, il ladro gentiluomo, personaggio che ebbe un successo immediato e clamoroso, tanto da spingere Leblanc a dedicargli quasi l’intera produzione successiva, con qualche insofferenza per essere rimasto identificato solo con quella creatura di carta.</p>
+                        <p>Leblanc trascorse lunghi periodi a Étretat, in Normandia, nella villa che chiamò <em>«Le Clos Lupin»</em> (oggi museo dedicato al personaggio), fonte di ispirazione per molte ambientazioni delle sue storie, tra cui <em>«L’Aiguille creuse»</em>. Fu nominato Cavaliere della Légion d’Honneur il 17 gennaio 1908, per i suoi servizi alla letteratura. Morì a Perpignan il 6 novembre 1941, all’età di 76 anni, lasciando un’eredità letteraria che avrebbe attraversato il secolo successivo attraverso innumerevoli adattamenti teatrali, cinematografici e televisivi.</p>
+                    </div>
                 </div>
-            );
-        }
-
-        // --- MAIN APP COMPONENT ---
-
-        function App() {
-            const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-            const [bookSearch, setBookSearch] = useState('');
-            const [selectedBookType, setSelectedBookType] = useState('ALL');
-            const [openBook, setOpenBook] = useState(null);
-            const [zoomImg, setZoomImg] = useState(null);
-
-            useEffect(() => {
-                if (!openBook) return;
-                const onKey = (e) => { if (e.key === 'Escape') setOpenBook(null); };
-                window.addEventListener('keydown', onKey);
-                const prev = document.body.style.overflow;
-                document.body.style.overflow = 'hidden';
-                return () => {
-                    window.removeEventListener('keydown', onKey);
-                    document.body.style.overflow = prev;
-                };
-            }, [openBook]);
-
-            useEffect(() => {
-                if (!zoomImg) return;
-                const onKey = (e) => { if (e.key === 'Escape') setZoomImg(null); };
-                window.addEventListener('keydown', onKey);
-                const prev = document.body.style.overflow;
-                document.body.style.overflow = 'hidden';
-                return () => {
-                    window.removeEventListener('keydown', onKey);
-                    document.body.style.overflow = prev;
-                };
-            }, [zoomImg]);
-
-            // Scroll helper
-            const scrollToSection = (id) => {
-                setMobileMenuOpen(false);
-                const element = document.getElementById(id);
-                if (element) {
-                    const offset = 80;
-                    const bodyRect = document.body.getBoundingClientRect().top;
-                    const elementRect = element.getBoundingClientRect().top;
-                    const elementPosition = elementRect - bodyRect;
-                    const offsetPosition = elementPosition - offset;
-
-                    window.scrollTo({
-                        top: offsetPosition,
-                        behavior: 'smooth'
-                    });
-                }
-            };
-
-            // Filter books
-            const filteredBooks = useMemo(() => {
-                return BOOKS.filter(book => {
-                    const norm = (s) => s.toLowerCase().replace(/[’‘]/g, "'");
-                    const q = norm(bookSearch);
-                    const matchesSearch =
-                        norm(book.italian).includes(q) ||
-                        norm(book.original).includes(q) ||
-                        book.year.toString().includes(bookSearch);
-
-                    if (!matchesSearch) return false;
-                    if (selectedBookType === 'ALL') return true;
-                    if (selectedBookType === 'ROMANZO') return book.type.includes('Romanzo');
-                    if (selectedBookType === 'RACCOLTA') return book.type.includes('Raccolta');
-                    if (selectedBookType === 'RACCONTO') return book.type.includes('Racconto');
-                    return true;
-                });
-            }, [bookSearch, selectedBookType]);
-
-            const navLinks = [
-                { name: "Home", id: "hero" },
-                { name: "Chi è Lupin", id: "biografia" },
-                { name: "I Libri", id: "libri" },
-                { name: "Teatro", id: "teatro" },
-                { name: "Cinema & TV", id: "film-tv" },
-                { name: "Radio", id: "radio" },
-                { name: "Dischi", id: "discografia" },
-                { name: "Fumetti", id: "fumetti" },
-            ];
-
-            return (
-                <div className="min-h-screen flex flex-col relative overflow-x-hidden">
-                    {/* Top Aesthetic Border Accent */}
-                    <div className="h-1 bg-gradient-to-r from-[#6b1f2a] via-[#c9a24b] to-[#6b1f2a] sticky top-0 z-50"></div>
-
-                    {/* STICKY HEADER */}
-                    <header className="sticky top-1 z-40 bg-[#120e0ce6] backdrop-blur-md border-b border-[#c9a24b]/30 shadow-lg">
-                        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-                            {/* Brand / Logo */}
-                            <a
-                                href="#hero"
-                                onClick={(e) => { e.preventDefault(); scrollToSection('hero'); }}
-                                className="group flex items-center space-x-3 cursor-pointer"
-                            >
-                                <div className="w-10 h-10 rounded-full border border-[#c9a24b] flex items-center justify-center bg-[#6b1f2a]/40 group-hover:border-[#e5c378] transition-colors">
-                                    <svg viewBox="0 0 64 64" className="w-6 h-6" role="img" aria-label="Cilindro e monocolo">
-                                        <path d="M21 38V15q0-3 3-3h16q3 0 3 3v23z" fill="#c9a24b" />
-                                        <rect x="21" y="28" width="22" height="5" fill="#120e0c" />
-                                        <rect x="11" y="37" width="42" height="6" rx="3" fill="#e5c378" />
-                                        <circle cx="43" cy="50" r="5" fill="none" stroke="#e5c378" strokeWidth="2.2" />
-                                    </svg>
-                                </div>
-                                <div>
-                                    <span className="font-cinzel text-xl sm:text-2xl font-bold tracking-widest text-[#f4ecd8] block leading-none">
-                                        ARSÈNE LUPIN
-                                    </span>
-                                    <span className="font-garamond italic text-xs tracking-widest text-[#c9a24b] block mt-1">
-                                        Gentleman-Cambrioleur • 1905
-                                    </span>
-                                </div>
-                            </a>
-
-                            {/* Desktop Nav */}
-                            <nav className="hidden md:flex items-center space-x-1 lg:space-x-3">
-                                {navLinks.map(link => (
-                                    <button
-                                        key={link.id}
-                                        onClick={() => scrollToSection(link.id)}
-                                        className="font-cinzel text-xs lg:text-sm tracking-wider uppercase px-3 py-2 text-[#d8ceb8] hover:text-[#e5c378] transition-colors hover:bg-[#6b1f2a]/20 rounded border border-transparent hover:border-[#c9a24b]/30"
-                                    >
-                                        {link.name}
-                                    </button>
-                                ))}
-                            </nav>
-
-                            {/* Mobile Hamburger Button */}
-                            <div className="md:hidden">
-                                <button
-                                    onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                                    className="p-2 rounded border border-[#c9a24b]/40 text-[#c9a24b] hover:text-[#f4ecd8] hover:bg-[#6b1f2a]/30 focus:outline-none"
-                                    aria-label="Apri menu"
-                                >
-                                    {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-                                </button>
-                            </div>
-                        </div>
-
-                        {/* Mobile Dropdown Menu */}
-                        {mobileMenuOpen && (
-                            <div className="md:hidden bg-[#16120f] border-b border-[#c9a24b]/40 px-4 pt-2 pb-6 space-y-2">
-                                {navLinks.map(link => (
-                                    <button
-                                        key={link.id}
-                                        onClick={() => scrollToSection(link.id)}
-                                        className="block w-full text-left font-cinzel text-sm uppercase tracking-widest px-4 py-3 text-[#f4ecd8] hover:bg-[#6b1f2a]/40 border-l-2 border-transparent hover:border-[#c9a24b] transition-all"
-                                    >
-                                        {link.name}
-                                    </button>
-                                ))}
-                            </div>
-                        )}
-                    </header>
-
-                    {/* MAIN CONTENT */}
-                    <main className="flex-grow">
-
-                        {/* 1. HERO SECTION */}
-                        <section id="hero" className="relative min-h-[90vh] flex items-center justify-center px-4 py-20 text-center">
-                            {/* Decorative framing box */}
-                            <div className="max-w-4xl mx-auto p-8 sm:p-14 relative z-10 bg-[#16120f]/90 border-2 border-[#c9a24b]/40 shadow-2xl rounded-sm">
-                                {/* Corner flourishes */}
-                                <div className="absolute -top-3 -left-3 text-[#c9a24b] text-xl font-serif select-none">╔</div>
-                                <div className="absolute -top-3 -right-3 text-[#c9a24b] text-xl font-serif select-none">╗</div>
-                                <div className="absolute -bottom-3 -left-3 text-[#c9a24b] text-xl font-serif select-none">╚</div>
-                                <div className="absolute -bottom-3 -right-3 text-[#c9a24b] text-xl font-serif select-none">╝</div>
-
-                                <div className="inline-block px-4 py-1 border-y border-[#c9a24b]/60 mb-6">
-                                    <span className="font-cinzel text-xs sm:text-sm tracking-[0.3em] uppercase text-[#c9a24b]">
-                                        Édition Belle Époque • Année 1905
-                                    </span>
-                                </div>
-
-                                <h1 className="font-playfair text-4xl sm:text-6xl md:text-7xl font-extrabold text-[#f4ecd8] tracking-tight mb-4 leading-none">
-                                    Arsène Lupin
-                                </h1>
-
-                                <p className="font-cinzel text-lg sm:text-2xl text-[#e5c378] tracking-widest uppercase mb-6 font-semibold">
-                                    Il Ladro Gentiluomo
-                                </p>
-
-                                <div className="w-24 h-px bg-[#c9a24b] mx-auto mb-6"></div>
-
-                                <p className="font-garamond text-xl sm:text-2xl text-[#d8ceb8] max-w-2xl mx-auto leading-relaxed mb-8 italic">
-                                    Nato dalla penna raffinata di <span className="text-[#f4ecd8] font-semibold not-italic">Maurice Leblanc</span> nel 1905 sulle pagine della celebre rivista parigina <em className="text-[#e5c378]">«Je Sais Tout»</em>.
-                                    Maestro del travestimento, paladino dell’ingegno, ironico e inafferrabile custode dei più reconditi segreti di Francia.
-                                </p>
-
-                                {/* Action Buttons */}
-                                <div className="flex flex-wrap items-center justify-center gap-4 pt-2">
-                                    <button
-                                        onClick={() => scrollToSection('libri')}
-                                        className="font-cinzel text-xs sm:text-sm tracking-widest uppercase px-6 py-3.5 bg-[#6b1f2a] hover:bg-[#8b2635] text-[#f4ecd8] border border-[#c9a24b] transition-all duration-300 shadow-md hover:scale-105 flex items-center space-x-2 cursor-pointer"
-                                    >
-                                        <BookOpen className="w-4 h-4 text-[#c9a24b]" />
-                                        <span>I Romanzi e i Racconti</span>
-                                    </button>
-                                    <button
-                                        onClick={() => scrollToSection('biografia')}
-                                        className="font-cinzel text-xs sm:text-sm tracking-widest uppercase px-6 py-3.5 bg-transparent hover:bg-[#c9a24b]/10 text-[#f4ecd8] border border-[#c9a24b]/60 hover:border-[#c9a24b] transition-all duration-300 flex items-center space-x-2 cursor-pointer"
-                                    >
-                                        <Feather className="w-4 h-4 text-[#c9a24b]" />
-                                        <span>Chi è Lupin</span>
-                                    </button>
-                                </div>
-                            </div>
-                        </section>
-
-                        {/* 2. CHI È LUPIN (BIOGRAFIA & GENESI) */}
-                        <section id="biografia" className="py-20 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
-                            <SectionHeading
-                                title="Genesi & Mito del Ladro Gentiluomo"
-                                subtitle="Dalla Parigi di inizio Novecento all’immaginario collettivo universale"
-                                ornament="⚜"
-                            />
-
-                            {/* Blocco centrale unico a due colonne */}
-                            <div className="max-w-5xl mx-auto bg-[#1c1613] p-8 sm:p-12 border border-[#c9a24b]/30 relative rounded-sm">
-                                <div className="absolute top-3 right-3 text-[#c9a24b]/30 font-cinzel text-xs">1. LA CREAZIONE</div>
-                                <h3 className="font-playfair text-2xl sm:text-3xl font-bold text-[#e5c378] mb-8 text-center">
-                                    La nascita di un mito: Arsène Lupin
-                                </h3>
-
-                                <div className="md:flex md:items-start md:gap-8 font-garamond text-lg sm:text-xl text-[#d8ceb8] leading-relaxed">
-                                    <figure className="w-full max-w-[200px] mx-auto mb-6 md:mx-0 md:mb-0 md:w-[200px] md:shrink-0 md:text-left">
-                                        <div className="p-1.5 border border-[#c9a24b]/60 bg-[#120e0c] shadow-lg shadow-black/40">
-                                            <img
-                                                src="images/lupin_copertina_1907.png"
-                                                alt="Copertina di Arsène Lupin, gentleman-cambrioleur (1907), illustrazione di Léo Fontan"
-                                                loading="lazy"
-                                                onClick={() => setZoomImg({ src: 'images/lupin_copertina_1907.png', alt: 'Copertina di Arsène Lupin, gentleman-cambrioleur (1907), illustrazione di Léo Fontan', caption: 'Copertina di Arsène Lupin, gentleman-cambrioleur (1907) — Illustrazione di Léo Fontan — CC0 (pubblico dominio)' })}
-                                                title="Clicca per ingrandire"
-                                                className="w-full block cursor-zoom-in"
-                                                style={{ filter: 'sepia(0.1)' }}
-                                            />
-                                        </div>
-                                        <figcaption className="mt-2 font-garamond text-xs leading-snug text-[#d8ceb8] text-center md:text-left">
-                                            <span className="italic text-[#e5c378]">Copertina di Arsène Lupin, gentleman-cambrioleur (1907)</span><br />
-                                            Illustrazione di Léo Fontan<br />
-                                            Licenza:{' '}
-                                            <a
-                                                href="https://creativecommons.org/publicdomain/zero/1.0/deed.en"
-                                                target="_blank"
-                                                rel="noopener noreferrer"
-                                                className="text-[#e5c378] hover:text-[#f4ecd8] underline underline-offset-2"
-                                            >
-                                                CC0 (pubblico dominio) ↗
-                                            </a><br />
-                                            Fonte:{' '}
-                                            <a
-                                                href="https://commons.wikimedia.org/w/index.php?curid=68610259"
-                                                target="_blank"
-                                                rel="noopener noreferrer"
-                                                className="text-[#e5c378] hover:text-[#f4ecd8] underline underline-offset-2"
-                                            >
-                                                Wikimedia Commons ↗
-                                            </a>
-                                        </figcaption>
-                                    </figure>
-                                    <div className="md:columns-2 md:gap-10 md:flex-1 md:min-w-0 md:text-justify hyphens-auto" lang="it">
-                                    <p className="drop-cap mb-5">
-                                        Arsène Lupin è un personaggio di fantasia francese, creato da Maurice Leblanc. Questo ladro gentiluomo è particolarmente noto per la sua abilità nell’utilizzare travestimenti, trucchi e identità multiple per commettere crimini e risolvere casi.
-                                    </p>
-                                    <p className="mb-5">
-                                        L’eroe appare per la prima volta nel racconto <em className="text-[#e5c378]">L’arresto di Arsenio Lupin</em>, pubblicato sulla rivista <em className="text-[#e5c378]">Je sais tout</em> nel luglio del 1905. Il suo creatore, Maurice Leblanc, incluse questo racconto nella raccolta <em className="text-[#e5c378]">Arsenio Lupin, ladro gentiluomo</em>, pubblicata nel 1907. Considerato il grande successo riscosso dal personaggio tra i lettori, le sue avventure sono state pubblicate in diciassette romanzi, trentanove racconti e cinque opere teatrali dal 1905 fino alla morte dell’autore, avvenuta nel 1941.
-                                    </p>
-                                    <p className="mb-5">
-                                        Le sue numerose avventure sono ambientate in Francia durante la Belle Époque e i ruggenti anni Venti, periodi in cui Arsène Lupin riflette l’evoluzione del pensiero dell’autore: le simpatie anarchiche di Lupin scompaiono nei romanzi scritti durante la Prima guerra mondiale, periodo in cui il personaggio diventa profondamente patriottico. Inoltre, smette gradualmente di essere un ladro per diventare un detective. Oltre a essere un atleta e un combattente esperto, Lupin possiede un talento innato per il travestimento e una grande astuzia, qualità che sfrutta per risolvere enigmi di ogni tipo.
-                                    </p>
-                                    <p className="mb-5">
-                                        Così lo presenta il suo «amico-biografo» ne <em className="text-[#e5c378]">L’arresto di Arsenio Lupin</em>, in <em className="text-[#e5c378]">Arsenio Lupin, ladro gentiluomo</em> (1907): “Il suo ritratto? Come potrei farlo? Venti volte ho visto Arsène Lupin, e venti volte è apparsa davanti a me una persona diversa o, piuttosto, la stessa persona di cui venti specchi mi avrebbero rinviato altrettante immagini deformate [...]. «Io stesso», mi disse, «non so più bene chi io sia. In uno specchio non mi riconosco più». [...] E precisa, con una punta d’orgoglio: «Tanto meglio se non si può mai dire in tutta certezza: “Ecco Arsène Lupin”. L’essenziale è che si dica senza timore di sbagliare: “Arsène Lupin ha fatto questo”»”
-                                    </p>
-                                    <p>
-                                        La sua natura infantile e affascinante, spesso beffarda, unita a un carattere tormentato e misterioso, lo ha reso una figura popolare, incarnando il ladro gentiluomo della Belle Époque. La sua fama internazionale ha dato vita ad adattamenti cinematografici americani e a manga realizzati da autori giapponesi. Il suo nome è inoltre legato alla città francese di Étretat, in Normandia, che è al centro di diverse sue avventure, come <em className="text-[#e5c378]">«Il faraglione cavo»</em>, contribuendo così al mito che circonda il luogo.
-                                    </p>
-                                    </div>
-                                </div>
-                            </div>
-
-                            {/* Blocco Biografico Autore: Maurice Leblanc */}
-                            <div className="max-w-5xl mx-auto mt-12 bg-[#1c1613] p-8 sm:p-10 border border-[#c9a24b]/30 relative rounded-sm">
-                                <div className="absolute top-3 right-3 text-[#c9a24b]/30 font-cinzel text-xs">2. L’AUTORE</div>
-
-                                <h3 className="font-playfair text-2xl sm:text-3xl font-bold text-[#e5c378] mb-6 text-center">
-                                    Maurice Leblanc: vita dell’autore
-                                </h3>
-
-                                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
-                                    {/* Riquadro Ritratto / Simbolo */}
-                                    <div className="md:col-span-1 flex flex-col items-center justify-center p-6 bg-[#16120f] border border-[#c9a24b]/30 rounded-sm text-center h-full">
-                                        <figure className="w-full max-w-[260px] mb-5">
-                                            <div className="p-1.5 border border-[#c9a24b]/60 bg-[#120e0c] shadow-lg shadow-black/40">
-                                                <img
-                                                    src="images/maurice_leblanc.jpg"
-                                                    alt="Ritratto di Maurice Leblanc, 1907"
-                                                    onClick={() => setZoomImg({ src: 'images/maurice_leblanc.jpg', alt: 'Ritratto di Maurice Leblanc, 1907', caption: 'Maurice Leblanc, 1907 — Foto di Henri Manuel' })}
-                                                    title="Clicca per ingrandire"
-                                                    className="w-full aspect-[3/4] object-cover object-top block cursor-zoom-in"
-                                                    style={{ filter: 'sepia(0.15)' }}
-                                                />
-                                            </div>
-                                            <figcaption className="mt-2 font-garamond text-xs leading-snug text-[#d8ceb8]">
-                                                <span className="italic text-[#e5c378]">Maurice Leblanc, 1907</span><br />
-                                                Foto di Henri Manuel<br />
-                                                Licenza:{' '}
-                                                <a
-                                                    href="https://creativecommons.org/publicdomain/mark/1.0/"
-                                                    target="_blank"
-                                                    rel="noopener noreferrer"
-                                                    className="text-[#e5c378] hover:text-[#f4ecd8] underline underline-offset-2"
-                                                >
-                                                    Di pubblico dominio (Public domain) ↗
-                                                </a>
-                                            </figcaption>
-                                        </figure>
-                                        <h4 className="font-cinzel text-base uppercase tracking-widest font-bold text-[#f4ecd8] mb-1">
-                                            Maurice Leblanc
-                                        </h4>
-                                        <span className="font-cinzel text-sm text-[#c9a24b] tracking-wider mb-2">
-                                            1864 – 1941
-                                        </span>
-                                        <div className="w-12 h-px bg-[#c9a24b]/40 my-2"></div>
-                                        <p className="font-garamond italic text-sm text-[#d8ceb8]">
-                                            Scrittore & Giornalista<br />
-                                            Légion d’Honneur (1908)
-                                        </p>
-                                        <p className="font-garamond text-xs text-[#c9a24b] mt-3">
-                                            Villa «Le Clos Lupin»<br />Étretat, Normandia
-                                        </p>
-                                        <a
-                                            href="https://it.wikipedia.org/wiki/Maurice_Leblanc"
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            className="inline-block mt-4 font-cinzel text-[10px] uppercase tracking-widest text-[#e5c378] hover:text-[#f4ecd8] underline underline-offset-4"
-                                        >
-                                            Approfondisci su Wikipedia: Maurice Leblanc ↗
-                                        </a>
-                                    </div>
-
-                                    {/* Testo Biografico */}
-                                    <div className="md:col-span-2 space-y-4 md:text-justify">
-                                        <p className="drop-cap font-garamond text-xl sm:text-2xl text-[#d8ceb8] leading-relaxed">
-                                            Maurice Marie Émile Leblanc nacque a Rouen, in Normandia, l’11 dicembre 1864, secondo figlio di una famiglia agiata e colta. Rifiutando la carriera che il padre aveva immaginato per lui in una fabbrica di carte da gioco, si trasferì a Parigi nel 1888 per dedicarsi alla scrittura, lavorando come giornalista e pubblicando romanzi di costume di ispirazione naturalista; da adolescente aveva peraltro frequentato, a Rouen, Gustave Flaubert e Guy de Maupassant.
-                                        </p>
-                                        <p className="font-garamond text-lg sm:text-xl text-[#d8ceb8] leading-relaxed">
-                                            La sua vita cambiò per sempre nel 1905, quando l’editore Pierre Lafitte gli commissionò un racconto per la nuova rivista <em>«Je Sais Tout»</em>: nacque così Arsène Lupin, il ladro gentiluomo, personaggio che ebbe un successo immediato e clamoroso, tanto da spingere Leblanc a dedicargli quasi l’intera produzione successiva, con qualche insofferenza per essere rimasto identificato solo con quella creatura di carta.
-                                        </p>
-                                        <p className="font-garamond text-lg sm:text-xl text-[#d8ceb8] leading-relaxed">
-                                            Leblanc trascorse lunghi periodi a Étretat, in Normandia, nella villa che chiamò <em>«Le Clos Lupin»</em> (oggi museo dedicato al personaggio), fonte di ispirazione per molte ambientazioni delle sue storie, tra cui <em>«L’Aiguille creuse»</em>. Fu nominato Cavaliere della Légion d’Honneur il 17 gennaio 1908, per i suoi servizi alla letteratura. Morì a Perpignan il 6 novembre 1941, all’età di 76 anni, lasciando un’eredità letteraria che avrebbe attraversato il secolo successivo attraverso innumerevoli adattamenti teatrali, cinematografici e televisivi.
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </section>
-
-                        {/* 3. LIBRI (CATALOGO COMPLETO) */}
-                        <section id="libri" className="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto bg-[#16120f]/60 border-y border-[#c9a24b]/20">
-                            <SectionHeading
-                                title="I Romanzi & i Racconti"
-                                subtitle="Il canone letterario ufficiale scritto da Maurice Leblanc (1907 – postumi)"
-                                ornament="📖"
-                            />
-
-                            {/* Search and Filters Bar */}
-                            <div className="max-w-3xl mx-auto mb-10 bg-[#1c1613] p-4 sm:p-6 border border-[#c9a24b]/30 rounded-sm shadow-xl">
-                                <div className="flex flex-col sm:flex-row gap-4 items-center justify-between">
-                                    {/* Search Input */}
-                                    <div className="relative w-full sm:w-2/3">
-                                        <Search className="w-5 h-5 absolute left-3 top-1/2 -translate-y-1/2 text-[#c9a24b]" />
-                                        <input
-                                            type="text"
-                                            value={bookSearch}
-                                            onChange={(e) => setBookSearch(e.target.value)}
-                                            placeholder="Cerca per titolo italiano, francese o anno..."
-                                            className="w-full pl-10 pr-4 py-2.5 bg-[#120e0c] border border-[#c9a24b]/40 rounded-sm font-garamond text-lg text-[#f4ecd8] placeholder-[#c9a24b]/40 focus:outline-none focus:border-[#e5c378]"
-                                        />
-                                        {bookSearch && (
-                                            <button
-                                                onClick={() => setBookSearch('')}
-                                                className="absolute right-3 top-1/2 -translate-y-1/2 text-xs text-[#c9a24b] hover:text-[#f4ecd8]"
-                                            >
-                                                ✕
-                                            </button>
-                                        )}
-                                    </div>
-
-                                    {/* Filter Type Pills */}
-                                    <div className="flex items-center gap-2 w-full sm:w-auto justify-center flex-wrap">
-                                        {[
-                                            { id: 'ALL', label: 'Tutti' },
-                                            { id: 'ROMANZO', label: 'Romanzi' },
-                                            { id: 'RACCOLTA', label: 'Raccolte' },
-                                            { id: 'RACCONTO', label: 'Racconti' },
-                                        ].map(tab => (
-                                            <button
-                                                key={tab.id}
-                                                onClick={() => setSelectedBookType(tab.id)}
-                                                className={`font-cinzel text-xs uppercase px-3 py-1.5 rounded border transition-all ${
-                                                    selectedBookType === tab.id
-                                                        ? 'bg-[#6b1f2a] text-[#f4ecd8] border-[#c9a24b]'
-                                                        : 'bg-[#120e0c] text-[#d8ceb8] border-[#c9a24b]/30 hover:border-[#c9a24b]'
-                                                }`}
-                                            >
-                                                {tab.label}
-                                            </button>
-                                        ))}
-                                    </div>
-                                </div>
-
-                                <div className="mt-3 text-right">
-                                    <span className="font-garamond italic text-sm text-[#c9a24b]">
-                                        Opere trovate: {filteredBooks.length} su {BOOKS.length}
-                                    </span>
-                                </div>
-                            </div>
-
-                            {/* Books Grid */}
-                            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                                {filteredBooks.map((book, idx) => (
-                                    <div
-                                        key={book.year + '-' + idx}
-                                        onClick={book.stories ? () => setOpenBook(book) : undefined}
-                                        onKeyDown={book.stories ? (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); setOpenBook(book); } } : undefined}
-                                        role={book.stories ? 'button' : undefined}
-                                        tabIndex={book.stories ? 0 : undefined}
-                                        style={{ cursor: book.stories ? 'pointer' : 'default' }}
-                                        className={`bg-[#1c1613] p-6 border border-[#c9a24b]/30 rounded-sm relative flex flex-col justify-between ${book.stories ? 'group hover:border-[#c9a24b] transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-[#6b1f2a]/15' : ''}`}
-                                    >
-                                        {/* Year Badge */}
-                                        <div className="flex items-start justify-between mb-3 border-b border-[#c9a24b]/20 pb-3">
-                                            <span className="font-cinzel text-lg font-bold text-[#c9a24b] tracking-wider">
-                                                {book.year}
-                                            </span>
-                                            <span className="font-cinzel text-[10px] uppercase tracking-widest px-2.5 py-0.5 bg-[#6b1f2a]/40 border border-[#c9a24b]/30 text-[#f4ecd8] rounded">
-                                                {book.type}
-                                            </span>
-                                        </div>
-
-                                        {/* Titles */}
-                                        <div className="mb-4">
-                                            <h4 className="font-playfair text-xl font-bold text-[#f4ecd8] group-hover:text-[#e5c378] transition-colors leading-snug mb-1">
-                                                {book.italian}
-                                            </h4>
-                                            <p className="font-garamond italic text-base text-[#c9a24b]">
-                                                «{book.original}»
-                                            </p>
-                                        </div>
-
-                                        {/* Note */}
-                                        <p className="font-garamond text-base text-[#d8ceb8] leading-relaxed pt-2 border-t border-dashed border-[#c9a24b]/15">
-                                            {book.note}
-                                            {book.stories && (
-                                                <span className="block mt-3 font-cinzel text-[11px] uppercase tracking-widest text-[#e5c378] group-hover:text-[#f4ecd8]">
-                                                    ❦ {book.cta || `Vedi i ${book.stories.length} racconti`} ›
-                                                </span>
-                                            )}
-                                        </p>
-                                    </div>
-                                ))}
-                            </div>
-
-                            {filteredBooks.length === 0 && (
-                                <div className="text-center py-16 bg-[#1c1613] border border-dashed border-[#c9a24b]/30 max-w-md mx-auto">
-                                    <p className="font-garamond italic text-xl text-[#d8ceb8]">
-                                        Nessuna opera corrisponde alla ricerca «{bookSearch}».
-                                    </p>
-                                    <button
-                                        onClick={() => { setBookSearch(''); setSelectedBookType('ALL'); }}
-                                        className="mt-4 font-cinzel text-xs uppercase tracking-widest text-[#c9a24b] hover:text-[#f4ecd8] underline"
-                                    >
-                                        Azzera filtri
-                                    </button>
-                                </div>
-                            )}
-                        </section>
-
-                        {/* 4. TEATRO */}
-                        <section id="teatro" className="py-20 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
-                            <SectionHeading
-                                title="Le Opere Teatrali"
-                                subtitle="Il fascino parigino di Lupin calca il palcoscenico dei boulevard"
-                                ornament="🎭"
-                            />
-
-                            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                                {THEATER.map((play, idx) => (
-                                    <div
-                                        key={idx}
-                                        className="bg-[#1c1613] p-6 border border-[#c9a24b]/30 rounded-sm flex flex-col justify-between"
-                                    >
-                                        <div>
-                                            <div className="flex items-center justify-between mb-3 text-[#c9a24b]">
-                                                <Theater className="w-5 h-5 text-[#c9a24b]" />
-                                                <span className="font-cinzel text-base font-bold tracking-wider">
-                                                    {play.year}
-                                                </span>
-                                            </div>
-
-                                            <h4 className="font-playfair text-xl font-bold text-[#f4ecd8] mb-1">
-                                                {play.italian}
-                                            </h4>
-                                            <p className="font-garamond italic text-base text-[#c9a24b] mb-4">
-                                                Titolo orig.: «{play.original}»
-                                            </p>
-                                        </div>
-
-                                        <p className="font-garamond text-base text-[#d8ceb8] border-t border-[#c9a24b]/15 pt-3 leading-relaxed">
-                                            {play.notes}
-                                        </p>
-                                        {play.url && (
-                                            <a
-                                                href={play.url}
-                                                target="_blank"
-                                                rel="noopener noreferrer"
-                                                className="inline-block mt-3 font-cinzel text-[11px] uppercase tracking-widest text-[#e5c378] hover:text-[#f4ecd8] underline underline-offset-4"
-                                            >
-                                                Approfondisci su Wikipedia (FR) ↗
-                                            </a>
-                                        )}
-                                    </div>
-                                ))}
-                            </div>
-                        </section>
-
-                        {/* 5. FILM E TV */}
-                        <section id="film-tv" className="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto bg-[#16120f]/60 border-y border-[#c9a24b]/20">
-                            <SectionHeading
-                                title="Film & Serie TV"
-                                subtitle="Dalla celluloide muta del 1919 alle grandi produzioni televisive e moderne"
-                                ornament="🎬"
-                            />
-
-                            {/* Sottosezione Cinema */}
-                            <div className="mb-16">
-                                <div className="flex items-center space-x-3 mb-8 border-b border-[#c9a24b]/30 pb-3">
-                                    <Film className="w-6 h-6 text-[#c9a24b]" />
-                                    <h3 className="font-cinzel text-xl sm:text-2xl font-bold uppercase tracking-widest text-[#e5c378]">
-                                        Sul Grande Schermo (Cinema)
-                                    </h3>
-                                </div>
-
-                                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                                    {CINEMA.map((movie, idx) => (
-                                        <div
-                                            key={idx}
-                                            className="bg-[#1c1613] p-5 border border-[#c9a24b]/30 rounded-sm flex flex-col justify-between"
-                                        >
-                                            <div>
-                                                {movie.img && (
-                                                    <img
-                                                        src={movie.img}
-                                                        alt={movie.imgAlt || `Locandina: ${movie.italian} (${movie.year})`}
-                                                        loading="lazy"
-                                                        onClick={() => setZoomImg({ src: movie.img, alt: movie.imgAlt || `Locandina: ${movie.italian} (${movie.year})`, caption: movie.imgCaption || `${movie.italian} (${movie.year})` })}
-                                                        title="Clicca per ingrandire"
-                                                        className="w-full h-64 object-contain bg-[#120e0c] border border-[#c9a24b]/40 p-1 mb-4 cursor-zoom-in"
-                                                    />
-                                                )}
-                                                <div className="font-cinzel text-sm font-bold text-[#c9a24b] mb-1">
-                                                    {movie.year}
-                                                </div>
-                                                <h4 className="font-playfair text-lg font-bold text-[#f4ecd8] mb-1">
-                                                    {movie.italian}
-                                                </h4>
-                                                {movie.imdb && <a href={movie.imdb} target="_blank" rel="noopener noreferrer" className="inline-block font-cinzel text-[10px] uppercase tracking-widest text-[#e5c378] hover:text-[#f4ecd8] underline underline-offset-4 mb-2">Scheda IMDb ↗</a>}
-                                                {movie.original !== movie.italian && (
-                                                    <p className="font-garamond italic text-sm text-[#c9a24b] mb-2">
-                                                        «{movie.original}»
-                                                    </p>
-                                                )}
-                                                <p className="font-garamond text-sm text-[#e5c378] font-semibold mb-3">
-                                                    {movie.director}
-                                                </p>
-                                            </div>
-                                            <p className="font-garamond text-sm text-[#d8ceb8] border-t border-[#c9a24b]/15 pt-2 leading-relaxed">
-                                                {movie.notes}
-                                            </p>
-                                        </div>
-                                    ))}
-                                </div>
-                            </div>
-
-                            {/* Sottosezione Televisione */}
-                            <div>
-                                <div className="flex items-center space-x-3 mb-8 border-b border-[#c9a24b]/30 pb-3">
-                                    <Tv className="w-6 h-6 text-[#c9a24b]" />
-                                    <h3 className="font-cinzel text-xl sm:text-2xl font-bold uppercase tracking-widest text-[#e5c378]">
-                                        Sul piccolo schermo (Serie TV)
-                                    </h3>
-                                </div>
-
-                                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                                    {TELEVISION.map((show, idx) => (
-                                        <div
-                                            key={idx}
-                                            className="bg-[#1c1613] p-6 border border-[#c9a24b]/30 rounded-sm flex flex-col justify-between"
-                                        >
-                                            <div>
-                                                {show.img && (
-                                                    <img
-                                                        src={show.img}
-                                                        alt={`Immagine: ${show.italian} (${show.year})`}
-                                                        loading="lazy"
-                                                        onClick={() => setZoomImg({ src: show.img, alt: `Immagine: ${show.italian} (${show.year})`, caption: `${show.italian} (${show.year})` })}
-                                                        title="Clicca per ingrandire"
-                                                        className="w-full h-64 object-contain bg-[#120e0c] border border-[#c9a24b]/40 p-1 mb-4 cursor-zoom-in"
-                                                    />
-                                                )}
-                                                <div className="flex items-center justify-between mb-2">
-
-                                                    <span className="font-cinzel text-base font-bold text-[#c9a24b]">
-                                                        {show.year}
-                                                    </span>
-                                                    <span className="font-cinzel text-[10px] uppercase tracking-widest px-2 py-0.5 bg-[#6b1f2a]/40 text-[#f4ecd8] border border-[#c9a24b]/30 rounded">
-                                                        Serie TV
-                                                    </span>
-                                                </div>
-                                                <h4 className="font-playfair text-xl font-bold text-[#f4ecd8] mb-1">
-                                                    {show.italian}
-                                                </h4>
-                                                {show.imdb && <a href={show.imdb} target="_blank" rel="noopener noreferrer" className="inline-block font-cinzel text-[10px] uppercase tracking-widest text-[#e5c378] hover:text-[#f4ecd8] underline underline-offset-4 mb-2">Scheda IMDb ↗</a>}
-                                                {show.original !== show.italian && (
-                                                    <p className="font-garamond italic text-sm text-[#c9a24b] mb-3">
-                                                        Orig.: «{show.original}»
-                                                    </p>
-                                                )}
-                                            </div>
-                                            <p className="font-garamond text-base text-[#d8ceb8] border-t border-[#c9a24b]/15 pt-3 leading-relaxed">
-                                                {show.notes}
-                                            </p>
-                                        </div>
-                                    ))}
-                                </div>
-
-                                {/* Animazione e Menzione Speciale */}
-                                <div className="mt-8 bg-[#181310] p-6 border-l-4 border-[#c9a24b] border-y border-r border-[#c9a24b]/20">
-                                    <h4 className="font-cinzel text-sm uppercase tracking-widest font-bold text-[#e5c378] mb-2">
-                                        Menzione d’onore: Animazione & Giappone
-                                    </h4>
-                                    <p className="font-garamond text-lg text-[#d8ceb8] leading-relaxed">
-                                        L’opera di Leblanc ha dato vita al capolavoro manga e anime <strong className="text-[#f4ecd8]">«Lupin III» (ルパン三世)</strong> creato nel 1967 dal maestro <strong>Monkey Punch</strong>, incentrato sul nipote del ladro gentiluomo e divenuto un colosso della cultura pop mondiale.
-                                    </p>
-                                    <p className="mt-3">
-                                        <a
-                                            href="https://it.wikipedia.org/wiki/Lupin_III"
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            className="inline-block font-cinzel text-[11px] uppercase tracking-widest text-[#e5c378] hover:text-[#f4ecd8] underline underline-offset-4"
-                                        >
-                                            Approfondisci su Wikipedia: Lupin III ↗
-                                        </a>
-                                    </p>
-                                </div>
-                            </div>
-                        </section>
-
-                        {/* 6. SERIE RADIOFONICHE */}
-                        <section id="radio" className="py-20 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
-                            <SectionHeading
-                                title="Serie Radiofoniche"
-                                subtitle="La voce di Lupin sulle onde francesi"
-                                ornament="📻"
-                            />
-
-                            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                                {RADIO.map((r, idx) => (
-                                    <div key={idx} className="bg-[#1c1613] p-6 border border-[#c9a24b]/30 rounded-sm flex flex-col justify-between">
-                                        <div>
-                                            <div className="flex items-center justify-between mb-3 text-[#c9a24b]">
-                                                <Radio className="w-5 h-5 text-[#c9a24b]" />
-                                                <span className="font-cinzel text-sm font-bold tracking-wider">{r.years}</span>
-                                            </div>
-                                            <h4 className="font-playfair text-xl font-bold text-[#f4ecd8] mb-1">{r.title}</h4>
-                                            <p className="font-garamond italic text-base text-[#c9a24b] mb-4">{r.broadcaster}</p>
-                                        </div>
-                                        <div className="border-t border-[#c9a24b]/15 pt-3">
-                                            <ul className="font-garamond text-base text-[#d8ceb8] space-y-1 leading-relaxed">
-                                                <li><span className="text-[#e5c378] font-semibold">Realizzazione:</span> {r.creator}</li>
-                                                <li><span className="text-[#e5c378] font-semibold">Adattamenti:</span> {r.adaptation}</li>
-                                                <li><span className="text-[#e5c378] font-semibold">Voce di Arsène Lupin:</span> {r.voice}</li>
-                                            </ul>
-                                            {r.url && (
-                                                <a
-                                                    href={r.url}
-                                                    target="_blank"
-                                                    rel="noopener noreferrer"
-                                                    className="inline-block mt-4 font-cinzel text-[11px] uppercase tracking-widest text-[#e5c378] hover:text-[#f4ecd8] underline underline-offset-4"
-                                                >
-                                                    Ascolta la serie restaurata su INA ↗
-                                                </a>
-                                            )}
-                                        </div>
-                                    </div>
-                                ))}
-                            </div>
-                        </section>
-
-                        {/* 7. DISCOGRAFIA */}
-                        <section id="discografia" className="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto bg-[#16120f]/60 border-y border-[#c9a24b]/20">
-                            <SectionHeading
-                                title="Discografia"
-                                subtitle="Gli audiolibri Livraphone"
-                                ornament="💿"
-                            />
-
-                            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                                {DISCOGRAPHY.map((d, idx) => (
-                                    <div key={idx} className="bg-[#1c1613] p-6 border border-[#c9a24b]/30 rounded-sm flex flex-col justify-between">
-                                        <div>
-                                            <div className="flex items-center justify-between mb-3 text-[#c9a24b]">
-                                                <Disc3 className="w-5 h-5 text-[#c9a24b]" />
-                                                <span className="font-cinzel text-base font-bold tracking-wider">{d.year}</span>
-                                            </div>
-                                            <h4 className="font-playfair text-xl font-bold text-[#f4ecd8] mb-1">{d.title}</h4>
-                                            <p className="font-garamond italic text-base text-[#c9a24b] mb-4">{d.text} ({d.discs})</p>
-                                        </div>
-                                        <p className="font-garamond text-base text-[#d8ceb8] border-t border-[#c9a24b]/15 pt-3 leading-relaxed">
-                                            {d.label}{d.code ? ` ${d.code}` : ''}{d.ean ? <>{' '}<span className="whitespace-nowrap">EAN {d.ean}</span></> : null}
-                                        </p>
-                                    </div>
-                                ))}
-                            </div>
-                        </section>
-
-                        {/* 8. FUMETTI */}
-                        <section id="fumetti" className="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-                            <SectionHeading
-                                title="Fumetti"
-                                subtitle={`Arsène Lupin adattato da ${COMICS_INFO.adapter} (${COMICS_INFO.publisher})`}
-                                ornament="🎨"
-                            />
-
-                            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                                {COMICS.map((c) => (
-                                    <div key={c.n} className="bg-[#1c1613] p-6 border border-[#c9a24b]/30 rounded-sm flex flex-col justify-between">
-                                        <div>
-                                            <div className="flex items-center justify-between mb-3 text-[#c9a24b]">
-                                                <Palette className="w-5 h-5 text-[#c9a24b]" />
-                                                <span className="font-cinzel text-base font-bold tracking-wider">{c.year}</span>
-                                            </div>
-                                            <span className="font-cinzel text-[10px] uppercase tracking-widest px-2 py-0.5 bg-[#6b1f2a]/40 text-[#f4ecd8] border border-[#c9a24b]/30 rounded">Volume {c.n}</span>
-                                            <h4 className="font-playfair text-xl font-bold text-[#f4ecd8] mt-3 mb-4">{c.title}</h4>
-                                        </div>
-                                        <p className="font-garamond text-base text-[#d8ceb8] border-t border-[#c9a24b]/15 pt-3 leading-relaxed">
-                                            <span className="text-[#e5c378] font-semibold">Disegni di</span> {c.artist}
-                                        </p>
-                                    </div>
-                                ))}
-                            </div>
-                        </section>
-
-                    </main>
-
-                    {/* MODALE CONTENUTO RACCOLTA */}
-                    {openBook && (
-                        <div
-                            className="fixed inset-0 z-[60] flex items-center justify-center p-4 bg-black/75 backdrop-blur-sm"
-                            onClick={() => setOpenBook(null)}
-                            role="dialog"
-                            aria-modal="true"
-                        >
-                            <div
-                                className="relative w-full max-w-xl max-h-[85vh] overflow-y-auto bg-[#1c1613] border-2 border-[#c9a24b]/60 rounded-sm shadow-2xl p-6 sm:p-8"
-                                onClick={(e) => e.stopPropagation()}
-                            >
-                                <button
-                                    onClick={() => setOpenBook(null)}
-                                    className="absolute top-3 right-3 p-1.5 text-[#c9a24b] hover:text-[#f4ecd8] border border-[#c9a24b]/40 rounded"
-                                    aria-label="Chiudi"
-                                >
-                                    <X className="w-5 h-5" />
-                                </button>
-
-                                <div className="text-center mb-5 pr-6">
-                                    <span className="font-cinzel text-sm font-bold text-[#c9a24b] tracking-wider">{openBook.year}</span>
-                                    <h3 className="font-playfair text-2xl font-bold text-[#f4ecd8] mt-1 leading-snug">{openBook.italian}</h3>
-                                    <p className="font-garamond italic text-base text-[#c9a24b]">«{openBook.original}»</p>
-                                    <VintageDivider text={openBook.contentsTitle || `${openBook.stories.length} racconti`} className="!my-4" />
-                                </div>
-
-                                <ol className="space-y-3">
-                                    {openBook.stories.map((s, i) => (
-                                        <li key={i} className="flex items-start gap-3 border-b border-dashed border-[#c9a24b]/15 pb-3">
-                                            <span className="font-cinzel text-sm font-bold text-[#c9a24b] w-6 shrink-0 pt-0.5">{i + 1}.</span>
-                                            <div>
-                                                <p className="font-playfair text-lg font-bold text-[#f4ecd8] leading-snug">
-                                                    {s[0]}
-                                                    {s[2] && <span className="ml-2 align-middle font-cinzel text-[10px] uppercase tracking-widest px-2 py-0.5 bg-[#6b1f2a]/40 border border-[#c9a24b]/30 text-[#f4ecd8] rounded">{s[2]}</span>}
-                                                </p>
-                                                <p className="font-garamond italic text-base text-[#c9a24b]">«{s[1]}»</p>
-                                            </div>
-                                        </li>
-                                    ))}
-                                </ol>
-                            </div>
-                        </div>
-                    )}
-
-                    {/* LIGHTBOX IMMAGINI */}
-                    {zoomImg && (
-                        <div
-                            className="fixed inset-0 z-[70] flex flex-col items-center justify-center p-4 bg-black/90 backdrop-blur-sm cursor-zoom-out"
-                            onClick={() => setZoomImg(null)}
-                            role="dialog"
-                            aria-modal="true"
-                        >
-                            <button
-                                onClick={() => setZoomImg(null)}
-                                className="absolute top-4 right-4 p-2 text-[#c9a24b] hover:text-[#f4ecd8] border border-[#c9a24b]/50 rounded bg-[#120e0c]/80"
-                                aria-label="Chiudi"
-                            >
-                                <X className="w-6 h-6" />
-                            </button>
-                            <div className="p-1.5 border border-[#c9a24b]/60 bg-[#120e0c] shadow-2xl" onClick={(e) => e.stopPropagation()}>
-                                <img
-                                    src={zoomImg.src}
-                                    alt={zoomImg.alt}
-                                    className="block max-w-[92vw] max-h-[82vh] object-contain cursor-default"
-                                />
-                            </div>
-                            <p className="mt-3 font-garamond italic text-lg text-[#e5c378] text-center max-w-2xl">{zoomImg.caption}</p>
-                        </div>
-                    )}
-
-                    {/* FOOTER */}
-                    <footer className="bg-[#0e0b09] border-t-2 border-[#c9a24b]/30 py-12 px-4 sm:px-6 lg:px-8 text-center relative">
-                        <div className="max-w-4xl mx-auto space-y-6">
-
-                            <div className="flex items-center justify-center space-x-3 text-[#c9a24b]">
-                                <span>✦</span>
-                                <Crown className="w-6 h-6 text-[#c9a24b]" />
-                                <span>✦</span>
-                            </div>
-
-                            <h3 className="font-cinzel text-xl sm:text-2xl font-bold tracking-widest text-[#f4ecd8]">
-                                ARSÈNE LUPIN — IL LADRO GENTILUOMO
-                            </h3>
-
-                            <p className="font-garamond text-lg text-[#d8ceb8] max-w-xl mx-auto leading-relaxed">
-                                Omaggio al personaggio letterario creato da <span className="text-[#e5c378]">Maurice Leblanc</span> nel 1905.
-                                Un viaggio tra avventura e mistero nella Francia della Belle Époque, da Parigi alla Normandia.
-                            </p>
-
-                            <div className="h-px bg-gradient-to-r from-transparent via-[#c9a24b]/40 to-transparent w-full max-w-md mx-auto"></div>
-
-                            <div className="font-garamond text-sm text-[#c9a24b]/80 space-y-1">
-                                <p className="leading-relaxed">
-                                    Testi basati sulle voci «Arsenio Lupin» di{' '}
-                                    <a href="https://it.wikipedia.org/wiki/Arsenio_Lupin" target="_blank" rel="noopener noreferrer" className="text-[#e5c378] hover:text-[#f4ecd8] underline underline-offset-2">Wikipedia in italiano</a>{' '}
-                                    e «Arsène Lupin» di{' '}
-                                    <a href="https://fr.wikipedia.org/wiki/Ars%C3%A8ne_Lupin" target="_blank" rel="noopener noreferrer" className="text-[#e5c378] hover:text-[#f4ecd8] underline underline-offset-2">Wikipedia in francese</a>{' '}
-                                    (traduzione e adattamento), disponibili con licenza{' '}
-                                    <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.it" target="_blank" rel="noopener noreferrer" className="text-[#e5c378] hover:text-[#f4ecd8] underline underline-offset-2">CC BY-SA 4.0</a>.
-                                    Filmografia, serie radiofoniche, discografia e fumetti dall’edizione Newton Compton delle opere complete di Lupin. Schede dei film da IMDb.
-                                    Locandine, copertine e immagini sono di proprietà dei rispettivi titolari e riprodotte a scopo illustrativo.
-                                </p>
-                                <p className="font-cinzel text-xs tracking-wider text-[#d8ceb8]/60 mt-3">
-                                    © {new Date().getFullYear()} — Arsène Lupin - Il Ladro Gentiluomo
-                                </p>
-                            </div>
-
-                        </div>
-                    </footer>
+            </div>
+        </section>
+
+        <!-- 3. LIBRI -->
+        <section id="libri" class="sec w7 alt">
+            <div class="sh">
+                <div class="so">📖</div>
+                <h2>I Romanzi &amp; i Racconti</h2>
+                <p class="ss">Il canone letterario ufficiale scritto da Maurice Leblanc (1907 – postumi)</p>
+                <div class="dv"><span class="dl"></span><span class="dm"><span class="s1">✦</span><span class="s2">❦</span><span class="s1">✦</span></span><span class="dr"></span></div>
+            </div>
+
+            <div class="search">
+                <div class="srow">
+                    <div class="sbox">
+                        <svg class="ic"><use href="#i-search"/></svg>
+                        <input id="q" type="text" placeholder="Cerca per titolo italiano, francese o anno..." aria-label="Cerca un’opera" autocomplete="off">
+                        <button id="qclr" type="button" hidden aria-label="Cancella ricerca">✕</button>
+                    </div>
+                    <div class="pills">
+                        <button type="button" class="pill on" data-f="ALL">Tutti</button>
+                        <button type="button" class="pill" data-f="romanzo">Romanzi</button>
+                        <button type="button" class="pill" data-f="raccolta">Raccolte</button>
+                        <button type="button" class="pill" data-f="racconto">Racconti</button>
+                    </div>
                 </div>
-            );
-        }
+                <div class="count">Opere trovate: <span id="cnt">25</span> su 25</div>
+            </div>
 
-        const root = createRoot(document.getElementById('root'));
-        root.render(<App />);
-    </script>
+            <div class="grid g3" id="books">
+                <article class="card bk click" data-y="1907" data-t="raccolta" data-m="m-1907" role="button" tabindex="0">
+                    <div class="bh"><span class="by">1907</span><span class="bdg">Raccolta di 9 racconti</span></div>
+                    <div class="bti"><h4>Arsenio Lupin, ladro gentiluomo</h4><p class="bo">«Arsène Lupin, gentleman-cambrioleur»</p></div>
+                    <p class="bn">La celebre opera d’esordio che raccoglie i primi racconti usciti su «Je Sais Tout».<span class="cta">❦ Vedi i 9 racconti ›</span></p>
+                </article>
+                <article class="card bk click" data-y="1908" data-t="raccolta romanzo" data-m="m-1908" role="button" tabindex="0">
+                    <div class="bh"><span class="by">1908</span><span class="bdg">Raccolta / Romanzo</span></div>
+                    <div class="bti"><h4>Arsenio Lupin contro Herlock Sholmes</h4><p class="bo">«Arsène Lupin contre Herlock Sholmès»</p></div>
+                    <p class="bn">Il leggendario scontro con la celebre parodia del detective britannico di Conan Doyle.<span class="cta">❦ Vedi i due episodi ›</span></p>
+                </article>
+                <article class="card bk" data-y="1909" data-t="romanzo">
+                    <div class="bh"><span class="by">1909</span><span class="bdg">Romanzo</span></div>
+                    <div class="bti"><h4>Il faraglione cavo</h4><p class="bo">«L’Aiguille creuse»</p></div>
+                    <p class="bn">Noto anche come «La guglia cava» o «Il segreto della guglia». Capolavoro indiscusso.</p>
+                </article>
+                <article class="card bk click" data-y="1910" data-t="romanzo" data-m="m-1910" role="button" tabindex="0">
+                    <div class="bh"><span class="by">1910</span><span class="bdg">Romanzo</span></div>
+                    <div class="bti"><h4>813</h4><p class="bo">«813»</p></div>
+                    <p class="bn">Riedito nel 1917 in due tomi: «La doppia vita di Arsenio Lupin» e «I tre delitti di Arsenio Lupin».<span class="cta">❦ Vedi i due volumi del 1917 ›</span></p>
+                </article>
+                <article class="card bk" data-y="1912" data-t="romanzo">
+                    <div class="bh"><span class="by">1912</span><span class="bdg">Romanzo</span></div>
+                    <div class="bti"><h4>Il tappo di cristallo</h4><p class="bo">«Le bouchon de cristal»</p></div>
+                    <p class="bn">Ispirato al noto scandalo di Panama; uno dei romanzi più drammatici della saga.</p>
+                </article>
+                <article class="card bk" data-y="1912" data-t="racconto">
+                    <div class="bh"><span class="by">1912</span><span class="bdg">Racconto</span></div>
+                    <div class="bti"><h4>L’uomo con la pelle di capra</h4><p class="bo">«L’homme à la peau de bique»</p></div>
+                    <p class="bn">Pubblicato inizialmente su rivista negli Stati Uniti prima dell’edizione francese.</p>
+                </article>
+                <article class="card bk click" data-y="1913" data-t="raccolta" data-m="m-1913" role="button" tabindex="0">
+                    <div class="bh"><span class="by">1913</span><span class="bdg">Raccolta di 9 racconti</span></div>
+                    <div class="bti"><h4>Le confidenze di Arsenio Lupin</h4><p class="bo">«Les confidences d’Arsène Lupin»</p></div>
+                    <p class="bn">Nove brillanti avventure retrospettive narrate dal ladro gentiluomo.<span class="cta">❦ Vedi i 9 racconti ›</span></p>
+                </article>
+                <article class="card bk" data-y="1916" data-t="romanzo">
+                    <div class="bh"><span class="by">1916</span><span class="bdg">Romanzo</span></div>
+                    <div class="bti"><h4>La scheggia d’obice</h4><p class="bo">«L’Éclat d’obus»</p></div>
+                    <p class="bn">Ambientato durante la Prima guerra mondiale; apparizione cameo di Lupin.</p>
+                </article>
+                <article class="card bk" data-y="1918" data-t="romanzo">
+                    <div class="bh"><span class="by">1918</span><span class="bdg">Romanzo</span></div>
+                    <div class="bti"><h4>Il triangolo d’oro</h4><p class="bo">«Le Triangle d’or»</p></div>
+                    <p class="bn">Un intrigo patriottico ed economico all’ombra della Grande Guerra.</p>
+                </article>
+                <article class="card bk" data-y="1919" data-t="romanzo">
+                    <div class="bh"><span class="by">1919</span><span class="bdg">Romanzo</span></div>
+                    <div class="bti"><h4>L’Isola delle Trenta Bare</h4><p class="bo">«L’Ile aux Trente Cercueils»</p></div>
+                    <p class="bn">Toni gotici, leggende celtiche e misteri sulla remota isola bretone di Sarek.</p>
+                </article>
+                <article class="card bk" data-y="1921" data-t="romanzo">
+                    <div class="bh"><span class="by">1921</span><span class="bdg">Romanzo</span></div>
+                    <div class="bti"><h4>I denti della Tigre</h4><p class="bo">«Les Dents du Tigre»</p></div>
+                    <p class="bn">Lupin torna sotto l’identità di Don Luis Perenna per risolvere un’eredità insanguinata.</p>
+                </article>
+                <article class="card bk click" data-y="1923" data-t="raccolta" data-m="m-1923" role="button" tabindex="0">
+                    <div class="bh"><span class="by">1923</span><span class="bdg">Raccolta di 8 racconti</span></div>
+                    <div class="bti"><h4>Gli otto rintocchi del pendolo</h4><p class="bo">«Les huit coups de l’horloge»</p></div>
+                    <p class="bn">Lupin, nei panni del principe Rénine, risolve otto enigmi con la giovane Hortense.<span class="cta">❦ Vedi i 8 racconti ›</span></p>
+                </article>
+                <article class="card bk" data-y="1924" data-t="romanzo">
+                    <div class="bh"><span class="by">1924</span><span class="bdg">Romanzo</span></div>
+                    <div class="bti"><h4>La contessa di Cagliostro</h4><p class="bo">«La comtesse de Cagliostro»</p></div>
+                    <p class="bn">La giovinezza di Lupin (Raoul d’Andrésy) e la sua prima grande nemica/amante.</p>
+                </article>
+                <article class="card bk" data-y="1926" data-t="racconto">
+                    <div class="bh"><span class="by">1926</span><span class="bdg">Racconto</span></div>
+                    <div class="bti"><h4>Il soprabito di Arsenio Lupin</h4><p class="bo">«Le pardessus d’Arsène Lupin»</p></div>
+                    <p class="bn">Breve racconto investigativo pubblicato sul periodico «Le Journal».</p>
+                </article>
+                <article class="card bk" data-y="1927" data-t="romanzo">
+                    <div class="bh"><span class="by">1927</span><span class="bdg">Romanzo</span></div>
+                    <div class="bti"><h4>La signorina dagli occhi verdi</h4><p class="bo">«La demoiselle aux yeux verts»</p></div>
+                    <p class="bn">Un inseguimento amoroso e investigativo attraverso le province francesi.</p>
+                </article>
+                <article class="card bk click" data-y="1928" data-t="raccolta" data-m="m-1928" role="button" tabindex="0">
+                    <div class="bh"><span class="by">1928</span><span class="bdg">Raccolta di 8 racconti</span></div>
+                    <div class="bti"><h4>L’agenzia Barnett et Cie</h4><p class="bo">«L’agence Barnett et Cie»</p></div>
+                    <p class="bn">Lupin assume l’identità del detective privato Jim Barnett.<span class="cta">❦ Vedi i 8 racconti ›</span></p>
+                </article>
+                <article class="card bk" data-y="1929" data-t="racconto">
+                    <div class="bh"><span class="by">1929</span><span class="bdg">Racconto</span></div>
+                    <div class="bti"><h4>Il ponte che crolla</h4><p class="bo">«Le pont qui s’effondre»</p></div>
+                    <p class="bn">Pubblicato sulla rivista «L’Émulation» di Rouen.</p>
+                </article>
+                <article class="card bk" data-y="1929" data-t="romanzo">
+                    <div class="bh"><span class="by">1929</span><span class="bdg">Romanzo</span></div>
+                    <div class="bti"><h4>La dimora misteriosa</h4><p class="bo">«La demeure mystérieuse»</p></div>
+                    <p class="bn">Il furto dei diamanti di un’attrice e il rapimento all’Opera di Parigi.</p>
+                </article>
+                <article class="card bk" data-y="1930" data-t="racconto">
+                    <div class="bh"><span class="by">1930</span><span class="bdg">Racconto</span></div>
+                    <div class="bti"><h4>Lo smeraldo a cabochon</h4><p class="bo">«Le cabochon d’émeraude»</p></div>
+                    <p class="bn">Noto anche come «L’anello di smeraldo», incentrato su un raffinato enigma matrimoniale.</p>
+                </article>
+                <article class="card bk" data-y="1931" data-t="romanzo">
+                    <div class="bh"><span class="by">1931</span><span class="bdg">Romanzo</span></div>
+                    <div class="bti"><h4>La Barre-Y-Va</h4><p class="bo">«La Barre-Y-Va»</p></div>
+                    <p class="bn">Misteri e vecchie vendette in un maniero di campagna in Normandia.</p>
+                </article>
+                <article class="card bk" data-y="1933" data-t="romanzo">
+                    <div class="bh"><span class="by">1933</span><span class="bdg">Romanzo</span></div>
+                    <div class="bti"><h4>La donna dai due sorrisi</h4><p class="bo">«La femme aux deux sourires»</p></div>
+                    <p class="bn">Un’avventura intricata che intreccia furti di quadri e identità segrete.</p>
+                </article>
+                <article class="card bk" data-y="1933" data-t="romanzo">
+                    <div class="bh"><span class="by">1933</span><span class="bdg">Romanzo</span></div>
+                    <div class="bti"><h4>Victor, de la Brigade Mondaine</h4><p class="bo">«Victor, de la Brigade Mondaine»</p></div>
+                    <p class="bn">Lupin si infiltra nella polizia parigina come ispettore capo.</p>
+                </article>
+                <article class="card bk" data-y="1935" data-t="romanzo">
+                    <div class="bh"><span class="by">1935</span><span class="bdg">Romanzo</span></div>
+                    <div class="bti"><h4>La contessa di Cagliostro si vendica</h4><p class="bo">«La Cagliostro se venge»</p></div>
+                    <p class="bn">Il ritorno dell’antica e spietata rivale di gioventù di Arsène.</p>
+                </article>
+                <article class="card bk" data-y="1941" data-t="romanzo">
+                    <div class="bh"><span class="by">1941</span><span class="bdg">Romanzo postumo</span></div>
+                    <div class="bti"><h4>I miliardi di Arsenio Lupin</h4><p class="bo">«Les milliards d’Arsène Lupin»</p></div>
+                    <p class="bn">Pubblicato a puntate su «L’Auto» prima della morte dell’autore e in volume postumo.</p>
+                </article>
+                <article class="card bk" data-y="2012" data-t="romanzo">
+                    <div class="bh"><span class="by">2012</span><span class="bdg">Romanzo postumo</span></div>
+                    <div class="bti"><h4>L’ultimo amore di Arsenio Lupin</h4><p class="bo">«Le dernier amour d’Arsène Lupin»</p></div>
+                    <p class="bn">Manoscritto riscoperto scritto intorno al 1936 e pubblicato dagli eredi Leblanc.</p>
+                </article>
+            </div>
+
+            <div id="empty" class="empty" hidden>
+                <p>Nessuna opera corrisponde alla ricerca «<span id="qtxt"></span>».</p>
+                <button type="button" id="reset">Azzera filtri</button>
+            </div>
+        </section>
+
+        <!-- 4. TEATRO -->
+        <section id="teatro" class="sec">
+            <div class="sh">
+                <div class="so">🎭</div>
+                <h2>Le Opere Teatrali</h2>
+                <p class="ss">Il fascino parigino di Lupin calca il palcoscenico dei boulevard</p>
+                <div class="dv"><span class="dl"></span><span class="dm"><span class="s1">✦</span><span class="s2">❦</span><span class="s1">✦</span></span><span class="dr"></span></div>
+            </div>
+            <div class="grid g3">
+                <article class="card">
+                    <div>
+                        <div class="ch"><svg class="ic"><use href="#i-theater"/></svg><span class="cy">1908</span></div>
+                        <h4>Arsenio Lupin</h4>
+                        <p class="co">Titolo orig.: «Arsène Lupin»</p>
+                    </div>
+                    <div>
+                        <p class="cn">Scritta in collaborazione con Francis De Croisset. Trionfo assoluto al Théâtre de l’Athénée di Parigi.</p>
+                        <a class="lnk" href="https://fr.wikipedia.org/wiki/Ars%C3%A8ne_Lupin_(pi%C3%A8ce_de_th%C3%A9%C3%A2tre)" target="_blank" rel="noopener noreferrer">Approfondisci su Wikipedia (FR) ↗</a>
+                    </div>
+                </article>
+                <article class="card">
+                    <div>
+                        <div class="ch"><svg class="ic"><use href="#i-theater"/></svg><span class="cy">1911</span></div>
+                        <h4>Un’avventura di Arsenio Lupin</h4>
+                        <p class="co">Titolo orig.: «Une aventure d’Arsène Lupin»</p>
+                    </div>
+                    <div>
+                        <p class="cn">Dramma teatrale in un atto scritto da Maurice Leblanc.</p>
+                        <a class="lnk" href="https://fr.wikipedia.org/wiki/Une_aventure_d%27Ars%C3%A8ne_Lupin" target="_blank" rel="noopener noreferrer">Approfondisci su Wikipedia (FR) ↗</a>
+                    </div>
+                </article>
+                <article class="card">
+                    <div>
+                        <div class="ch"><svg class="ic"><use href="#i-theater"/></svg><span class="cy">1920</span></div>
+                        <h4>Il ritorno di Arsenio Lupin</h4>
+                        <p class="co">Titolo orig.: «Le retour d’Arsène Lupin»</p>
+                    </div>
+                    <div>
+                        <p class="cn">Scritta nuovamente a quattro mani con Francis De Croisset.</p>
+                        <a class="lnk" href="https://fr.wikipedia.org/wiki/Le_Retour_d%27Ars%C3%A8ne_Lupin_(pi%C3%A8ce_de_th%C3%A9%C3%A2tre)" target="_blank" rel="noopener noreferrer">Approfondisci su Wikipedia (FR) ↗</a>
+                    </div>
+                </article>
+                <article class="card">
+                    <div>
+                        <div class="ch"><svg class="ic"><use href="#i-theater"/></svg><span class="cy">1930</span></div>
+                        <h4>Questa donna è mia</h4>
+                        <p class="co">Titolo orig.: «Cette femme est à moi»</p>
+                    </div>
+                    <div>
+                        <p class="cn">Commedia scritta negli anni Trenta ma mai rappresentata in scena; pubblicata solo postuma nel 2015 dall’Association des Amis d’Arsène Lupin.</p>
+                        <a class="lnk" href="https://fr.wikipedia.org/wiki/Cette_femme_est_%C3%A0_moi" target="_blank" rel="noopener noreferrer">Approfondisci su Wikipedia (FR) ↗</a>
+                    </div>
+                </article>
+                <article class="card">
+                    <div>
+                        <div class="ch"><svg class="ic"><use href="#i-theater"/></svg><span class="cy">1932</span></div>
+                        <h4>Un quarto d’ora con Arsenio Lupin</h4>
+                        <p class="co">Titolo orig.: «Un quart d’heure avec Arsène Lupin»</p>
+                    </div>
+                    <div>
+                        <p class="cn">Breve atto unico radiofonico/teatrale di Maurice Leblanc.</p>
+                        <a class="lnk" href="https://fr.wikipedia.org/wiki/Un_quart_d%27heure_avec_Ars%C3%A8ne_Lupin" target="_blank" rel="noopener noreferrer">Approfondisci su Wikipedia (FR) ↗</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- 5. FILM E TV -->
+        <section id="film-tv" class="sec w7 alt">
+            <div class="sh">
+                <div class="so">🎬</div>
+                <h2>Film &amp; Serie TV</h2>
+                <p class="ss">Dalla celluloide muta del 1919 alle grandi produzioni televisive e moderne</p>
+                <div class="dv"><span class="dl"></span><span class="dm"><span class="s1">✦</span><span class="s2">❦</span><span class="s1">✦</span></span><span class="dr"></span></div>
+            </div>
+
+            <div class="sub">
+                <div class="sub-h"><svg class="ic"><use href="#i-film"/></svg><h3>Sul Grande Schermo (Cinema)</h3></div>
+                <div class="grid g4">
+                    <article class="card c-cin"><div>
+                        <img class="zimg zoom" src="images/the_gentleman_burglar_1908.jpg" alt="Locandina: The Gentleman Burglar (1908)" data-cap="The Gentleman Burglar (1908)" loading="lazy" title="Clicca per ingrandire">
+                        <div class="yr">1908</div><h4>The Gentleman Burglar</h4>
+                        <a class="lnk sm imdb" href="https://www.imdb.com/title/tt0366510/" target="_blank" rel="noopener noreferrer">Scheda IMDb ↗</a>
+                        <p class="dir">Edwin S. Porter</p></div>
+                        <p class="cn">Produzione statunitense, con William Ranous nel ruolo di Lupin.</p></article>
+                    <article class="card c-cin"><div>
+                        <img class="zimg zoom" src="images/arsene_lupin_contre_herlock_sholmes_1910.jpg" alt="Locandina: Arsène Lupin contra Sherlock Holmes (1910)" data-cap="Arsène Lupin contra Sherlock Holmes (1910)" loading="lazy" title="Clicca per ingrandire">
+                        <div class="yr">1910</div><h4>Arsène Lupin contra Sherlock Holmes</h4>
+                        <a class="lnk sm imdb" href="https://www.imdb.com/title/tt1163741/" target="_blank" rel="noopener noreferrer">Scheda IMDb ↗</a>
+                        <p class="dir">Viggo Larsen</p></div>
+                        <p class="cn">Produzione tedesca in cinque episodi, con Paul Otto nel ruolo di Lupin.</p></article>
+                    <article class="card c-cin"><div>
+                        <img class="zimg zoom" src="images/arsene_lupin_1914.jpg" alt="Locandina: Arsenio Lupin (1914)" data-cap="Arsenio Lupin (1914)" loading="lazy" title="Clicca per ingrandire">
+                        <div class="yr">1914</div><h4>Arsenio Lupin</h4>
+                        <a class="lnk sm imdb" href="https://www.imdb.com/title/tt0461463/" target="_blank" rel="noopener noreferrer">Scheda IMDb ↗</a>
+                        <p class="og">«Arsène Lupin»</p>
+                        <p class="dir">Émile Chautard</p></div>
+                        <p class="cn">Produzione francese, con Georges Tréville nel ruolo di Lupin.</p></article>
+                    <article class="card c-cin"><div>
+                        <img class="zimg zoom" src="images/the_gentelman_burglar_1915.jpg" alt="Locandina: The Gentleman Burglar (1915)" data-cap="The Gentleman Burglar (1915)" loading="lazy" title="Clicca per ingrandire">
+                        <div class="yr">1915</div><h4>The Gentleman Burglar</h4>
+                        <a class="lnk sm imdb" href="https://www.imdb.com/title/tt1179851/" target="_blank" rel="noopener noreferrer">Scheda IMDb ↗</a>
+                        <p class="dir">E. A. Martin</p></div>
+                        <p class="cn">Produzione statunitense, con William Stowell nel ruolo di Lupin.</p></article>
+                    <article class="card c-cin"><div>
+                        <img class="zimg zoom" src="images/the_teeth_of_the_tiger_1919.jpg" alt="Locandina: The Teeth of the Tiger (1919)" data-cap="The Teeth of the Tiger (1919)" loading="lazy" title="Clicca per ingrandire">
+                        <div class="yr">1919</div><h4>The Teeth of the Tiger</h4>
+                        <a class="lnk sm imdb" href="https://www.imdb.com/title/tt0010761/" target="_blank" rel="noopener noreferrer">Scheda IMDb ↗</a>
+                        <p class="dir">Chester Withey</p></div>
+                        <p class="cn">Pellicola muta statunitense tratta dall’omonimo romanzo.</p></article>
+                    <article class="card c-cin"><div>
+                        <img class="zimg zoom" src="images/813_1920.jpg" alt="Locandina: 813-Arsene Lupin (1920)" data-cap="813-Arsene Lupin (1920)" loading="lazy" title="Clicca per ingrandire">
+                        <div class="yr">1920</div><h4>813-Arsene Lupin</h4>
+                        <a class="lnk sm imdb" href="https://www.imdb.com/title/tt0010942/" target="_blank" rel="noopener noreferrer">Scheda IMDb ↗</a>
+                        <p class="dir">Scott F. Sidney</p></div>
+                        <p class="cn">Produzione statunitense, con Wedgwood Nowell nel ruolo di Lupin.</p></article>
+                    <article class="card c-cin"><div>
+                        <img class="zimg zoom" src="images/arsen_lupin_utolso_kalandja_1921.jpg" alt="Ritratto del regista Paul Fejos" data-cap="Paul Fejos, regista di Arsen Lupin utolso kalandja (1921)" loading="lazy" title="Clicca per ingrandire">
+                        <div class="yr">1921</div><h4>Arsen Lupin utolso kalandja</h4>
+                        <a class="lnk sm imdb" href="https://www.imdb.com/title/tt0011931/" target="_blank" rel="noopener noreferrer">Scheda IMDb ↗</a>
+                        <p class="dir">Paul Fejos</p></div>
+                        <p class="cn">Produzione ungherese, con Gusztav Partos nel ruolo di Lupin. Nella foto: il regista Paul Fejos.</p></article>
+                    <article class="card c-cin"><div>
+                        <img class="zimg zoom" src="images/813-Rupimono_1923.jpg" alt="Locandina: 813-Rupimono (1923)" data-cap="813-Rupimono (1923)" loading="lazy" title="Clicca per ingrandire">
+                        <div class="yr">1923</div><h4>813-Rupimono</h4>
+                        <a class="lnk sm imdb" href="https://www.imdb.com/title/tt0013812/" target="_blank" rel="noopener noreferrer">Scheda IMDb ↗</a>
+                        <p class="dir">Kenji Mizoguchi</p></div>
+                        <p class="cn">Produzione giapponese, con Minami Kômei nel ruolo di Lupin.</p></article>
+                    <article class="card c-cin"><div>
+                        <img class="zimg zoom" src="images/vom_taeter_fehlt_jede_spur_1928.jpg" alt="Locandina: Vom Täter fehlt jede Spur (1928)" data-cap="Vom Täter fehlt jede Spur (1928)" loading="lazy" title="Clicca per ingrandire">
+                        <div class="yr">1928</div><h4>Vom Täter fehlt jede Spur</h4>
+                        <a class="lnk sm imdb" href="https://www.imdb.com/title/tt0438569/" target="_blank" rel="noopener noreferrer">Scheda IMDb ↗</a>
+                        <p class="dir">Constantin J. David</p></div>
+                        <p class="cn">Produzione tedesca, con Kurt Gerron nel ruolo di Lupin (nel film chiamato Arsène Dupin).</p></article>
+                    <article class="card c-cin"><div>
+                        <img class="zimg zoom" src="images/arsenio_lupin_1932.jpg" alt="Locandina: Arsenio Lupin (1932)" data-cap="Arsenio Lupin (1932)" loading="lazy" title="Clicca per ingrandire">
+                        <div class="yr">1932</div><h4>Arsenio Lupin</h4>
+                        <a class="lnk sm imdb" href="https://www.imdb.com/title/tt0022639/" target="_blank" rel="noopener noreferrer">Scheda IMDb ↗</a>
+                        <p class="og">«Arsène Lupin»</p>
+                        <p class="dir">Jack Conway</p></div>
+                        <p class="cn">Produzione MGM con John Barrymore e Lionel Barrymore.</p></article>
+                    <article class="card c-cin"><div>
+                        <img class="zimg zoom" src="images/arsene_lupin_detective_1937.jpg" alt="Locandina: Arsène Lupin détective (1937)" data-cap="Arsène Lupin détective (1937)" loading="lazy" title="Clicca per ingrandire">
+                        <div class="yr">1937</div><h4>Arsène Lupin détective</h4>
+                        <a class="lnk sm imdb" href="https://www.imdb.com/title/tt0143116/" target="_blank" rel="noopener noreferrer">Scheda IMDb ↗</a>
+                        <p class="dir">Henri Diamant-Berger</p></div>
+                        <p class="cn">Produzione francese, con Jules Berry nel ruolo di Lupin.</p></article>
+                    <article class="card c-cin"><div>
+                        <img class="zimg zoom" src="images/arsene_lupin_returns_1938.jpg" alt="Locandina: Arsène Lupin Returns (1938)" data-cap="Arsène Lupin Returns (1938)" loading="lazy" title="Clicca per ingrandire">
+                        <div class="yr">1938</div><h4>Arsène Lupin Returns</h4>
+                        <a class="lnk sm imdb" href="https://www.imdb.com/title/tt0029884/" target="_blank" rel="noopener noreferrer">Scheda IMDb ↗</a>
+                        <p class="dir">George Fitzmaurice</p></div>
+                        <p class="cn">Produzione statunitense, con Melvyn Douglas nel ruolo di Lupin.</p></article>
+                    <article class="card c-cin"><div>
+                        <img class="zimg zoom" src="images/enter_arsene_lupin_1944.jpg" alt="Locandina: Enter Arsene Lupin (1944)" data-cap="Enter Arsene Lupin (1944)" loading="lazy" title="Clicca per ingrandire">
+                        <div class="yr">1944</div><h4>Enter Arsene Lupin</h4>
+                        <a class="lnk sm imdb" href="https://www.imdb.com/title/tt0036794/" target="_blank" rel="noopener noreferrer">Scheda IMDb ↗</a>
+                        <p class="dir">Ford L. Beebe</p></div>
+                        <p class="cn">Produzione statunitense, con Melvyn Douglas nel ruolo di Lupin.</p></article>
+                    <article class="card c-cin"><div>
+                        <img class="zimg zoom" src="images/arsenio_lupin_1947.jpg" alt="Locandina: Arsenio Lupin (1947)" data-cap="Arsenio Lupin (1947)" loading="lazy" title="Clicca per ingrandire">
+                        <div class="yr">1947</div><h4>Arsenio Lupin</h4>
+                        <a class="lnk sm imdb" href="https://www.imdb.com/title/tt0139860/" target="_blank" rel="noopener noreferrer">Scheda IMDb ↗</a>
+                        <p class="dir">Ramon Peon</p></div>
+                        <p class="cn">Produzione messicana, con Ramon Pereda nel ruolo di Lupin.</p></article>
+                    <article class="card c-cin"><div>
+                        <img class="zimg zoom" src="images/el_inspector_victor_contra_arsenio_lupin_1947.jpg" alt="Locandina: El Inspector Victor contra Arsenio Lupin (1947)" data-cap="El Inspector Victor contra Arsenio Lupin (1947)" loading="lazy" title="Clicca per ingrandire">
+                        <div class="yr">1947</div><h4>El Inspector Victor contra Arsenio Lupin</h4>
+                        <a class="lnk sm imdb" href="https://www.imdb.com/title/tt0140286/" target="_blank" rel="noopener noreferrer">Scheda IMDb ↗</a>
+                        <p class="dir">Ramon Peon</p></div>
+                        <p class="cn">Produzione messicana, con Ramon Pereda nel ruolo di Lupin.</p></article>
+                    <article class="card c-cin"><div>
+                        <img class="zimg zoom" src="images/le_avventure_arsenio_lupin_1957.jpg" alt="Locandina: Le avventure di Arsenio Lupin (1957)" data-cap="Le avventure di Arsenio Lupin (1957)" loading="lazy" title="Clicca per ingrandire">
+                        <div class="yr">1957</div><h4>Le avventure di Arsenio Lupin</h4>
+                        <a class="lnk sm imdb" href="https://www.imdb.com/title/tt0050152/" target="_blank" rel="noopener noreferrer">Scheda IMDb ↗</a>
+                        <p class="og">«Les Aventures d’Arsène Lupin»</p>
+                        <p class="dir">Jacques Becker</p></div>
+                        <p class="cn">Con Robert Lamoureux nel ruolo di Lupin.</p></article>
+                    <article class="card c-cin"><div>
+                        <img class="zimg zoom" src="images/il_ritorno_arsenio_lupin_1959.jpg" alt="Locandina: Il ritorno di Arsenio Lupin (1959)" data-cap="Il ritorno di Arsenio Lupin (1959)" loading="lazy" title="Clicca per ingrandire">
+                        <div class="yr">1959</div><h4>Il ritorno di Arsenio Lupin</h4>
+                        <a class="lnk sm imdb" href="https://www.imdb.com/title/tt0052578/" target="_blank" rel="noopener noreferrer">Scheda IMDb ↗</a>
+                        <p class="og">«Signé: Arsène Lupin»</p>
+                        <p class="dir">Yves Robert</p></div>
+                        <p class="cn">Robert Lamoureux riprende il ruolo del celebre ladro.</p></article>
+                    <article class="card c-cin"><div>
+                        <img class="zimg zoom" src="images/arsenio_lupin_contro_arsenio_lupin_1962.jpg" alt="Locandina: Arsenio Lupin contro Arsenio Lupin (1962)" data-cap="Arsenio Lupin contro Arsenio Lupin (1962)" loading="lazy" title="Clicca per ingrandire">
+                        <div class="yr">1962</div><h4>Arsenio Lupin contro Arsenio Lupin</h4>
+                        <a class="lnk sm imdb" href="https://www.imdb.com/title/tt0055759/" target="_blank" rel="noopener noreferrer">Scheda IMDb ↗</a>
+                        <p class="og">«Arsène Lupin contre Arsène Lupin»</p>
+                        <p class="dir">Édouard Molinaro</p></div>
+                        <p class="cn">Commedia con Jean-Claude Brialy e Jean-Pierre Cassel.</p></article>
+                    <article class="card c-cin"><div>
+                        <img class="zimg zoom" src="images/lupin_III_il_castello_di_cagliostro_1979.jpg" alt="Locandina: Lupin III – Il castello di Cagliostro (1979)" data-cap="Lupin III – Il castello di Cagliostro (1979)" loading="lazy" title="Clicca per ingrandire">
+                        <div class="yr">1979</div><h4>Lupin III – Il castello di Cagliostro</h4>
+                        <a class="lnk sm imdb" href="https://www.imdb.com/title/tt0079833/" target="_blank" rel="noopener noreferrer">Scheda IMDb ↗</a>
+                        <p class="og">«Rupan sansei: Kariosutoro no shiro»</p>
+                        <p class="dir">Hayao Miyazaki</p></div>
+                        <p class="cn">Film d’animazione dedicato a Lupin III, con la voce di Yasuo Yamada nel ruolo del protagonista.</p></article>
+                    <article class="card c-cin"><div>
+                        <img class="zimg zoom" src="images/arsenio_lupin_2004.jpg" alt="Locandina: Arsenio Lupin (2004)" data-cap="Arsenio Lupin (2004)" loading="lazy" title="Clicca per ingrandire">
+                        <div class="yr">2004</div><h4>Arsenio Lupin</h4>
+                        <a class="lnk sm imdb" href="https://www.imdb.com/title/tt0373690/" target="_blank" rel="noopener noreferrer">Scheda IMDb ↗</a>
+                        <p class="og">«Arsène Lupin»</p>
+                        <p class="dir">Jean-Paul Salomé</p></div>
+                        <p class="cn">Produzione franco-italo-spagnola con Romain Duris, Kristin Scott Thomas ed Eva Green.</p></article>
+                </div>
+            </div>
+
+            <div>
+                <div class="sub-h"><svg class="ic"><use href="#i-tv"/></svg><h3>Sul piccolo schermo (Serie TV)</h3></div>
+                <div class="grid g3">
+                    <article class="card c-tv"><div>
+                        <img class="zimg zoom" src="images/arsenio_lupin_1971.jpg" alt="Immagine: Arsenio Lupin (1971–1974)" data-cap="Arsenio Lupin (1971–1974)" loading="lazy" title="Clicca per ingrandire">
+                        <div class="row"><span class="cy">1971–1974</span><span class="bdg">Serie TV</span></div>
+                        <h4>Arsenio Lupin</h4>
+                        <a class="lnk sm imdb" href="https://www.imdb.com/title/tt0136713/" target="_blank" rel="noopener noreferrer">Scheda IMDb ↗</a>
+                        <p class="og">Orig.: «Arsène Lupin»</p></div>
+                        <p class="cn">Serie franco-europea con Georges Descrières nel ruolo di Lupin.</p></article>
+                    <article class="card c-tv"><div>
+                        <img class="zimg zoom" src="images/arsene_lupin_joue_et_perd_1980.jpg" alt="Immagine: Arsène Lupin joue et perd (1980)" data-cap="Arsène Lupin joue et perd (1980)" loading="lazy" title="Clicca per ingrandire">
+                        <div class="row"><span class="cy">1980</span><span class="bdg">Serie TV</span></div>
+                        <h4>Arsène Lupin joue et perd</h4>
+                        <a class="lnk sm imdb" href="https://www.imdb.com/title/tt0198056/" target="_blank" rel="noopener noreferrer">Scheda IMDb ↗</a></div>
+                        <p class="cn">Miniserie televisiva francese con Jean-Claude Brialy.</p></article>
+                    <article class="card c-tv"><div>
+                        <img class="zimg zoom" src="images/il_ritorno_arsenio_lupin_1989.jpg" alt="Immagine: Il ritorno di Arsenio Lupin (1989–1996)" data-cap="Il ritorno di Arsenio Lupin (1989–1996)" loading="lazy" title="Clicca per ingrandire">
+                        <div class="row"><span class="cy">1989–1996</span><span class="bdg">Serie TV</span></div>
+                        <h4>Il ritorno di Arsenio Lupin</h4>
+                        <a class="lnk sm imdb" href="https://www.imdb.com/title/tt0096689/" target="_blank" rel="noopener noreferrer">Scheda IMDb ↗</a>
+                        <p class="og">Orig.: «Le Retour d’Arsène Lupin»</p></div>
+                        <p class="cn">Serie televisiva con François Dunoyer nel ruolo del protagonista.</p></article>
+                    <article class="card c-tv"><div>
+                        <img class="zimg zoom" src="images/les_exploits_de_arsene_lupin_1996.jpg" alt="Immagine: Les exploits d’Arsène Lupin (1996)" data-cap="Les exploits d’Arsène Lupin (1996)" loading="lazy" title="Clicca per ingrandire">
+                        <div class="row"><span class="cy">1996</span><span class="bdg">Serie TV</span></div>
+                        <h4>Les exploits d’Arsène Lupin</h4>
+                        <a class="lnk sm imdb" href="https://www.imdb.com/it/title/tt0115293/" target="_blank" rel="noopener noreferrer">Scheda IMDb ↗</a></div>
+                        <p class="cn">Serie animata franco-canadese prodotta da Cinar e France-Animation (26 episodi).</p></article>
+                    <article class="card c-tv"><div>
+                        <img class="zimg zoom" src="images/lupin_2021.jpg" alt="Immagine: Lupin (2021–oggi)" data-cap="Lupin (2021–oggi)" loading="lazy" title="Clicca per ingrandire">
+                        <div class="row"><span class="cy">2021–oggi</span><span class="bdg">Serie TV</span></div>
+                        <h4>Lupin</h4>
+                        <a class="lnk sm imdb" href="https://www.imdb.com/it/title/tt2531336/" target="_blank" rel="noopener noreferrer">Scheda IMDb ↗</a></div>
+                        <p class="cn">Serie Netflix con Omar Sy nel ruolo di Assane Diop.</p></article>
+                </div>
+
+                <div class="hon">
+                    <h4>Menzione d’onore: Animazione &amp; Giappone</h4>
+                    <p>L’opera di Leblanc ha dato vita al capolavoro manga e anime <strong>«Lupin III» (ルパン三世)</strong> creato nel 1967 dal maestro <strong>Monkey Punch</strong>, incentrato sul nipote del ladro gentiluomo e divenuto un colosso della cultura pop mondiale.</p>
+                    <p><a class="lnk" href="https://it.wikipedia.org/wiki/Lupin_III" target="_blank" rel="noopener noreferrer">Approfondisci su Wikipedia: Lupin III ↗</a></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. RADIO -->
+        <section id="radio" class="sec">
+            <div class="sh">
+                <div class="so">📻</div>
+                <h2>Serie Radiofoniche</h2>
+                <p class="ss">La voce di Lupin sulle onde francesi</p>
+                <div class="dv"><span class="dl"></span><span class="dm"><span class="s1">✦</span><span class="s2">❦</span><span class="s1">✦</span></span><span class="dr"></span></div>
+            </div>
+            <div class="grid g3">
+                <article class="card c-rad">
+                    <div>
+                        <div class="ch"><svg class="ic"><use href="#i-radio"/></svg><span class="cy sm">marzo 1960 – luglio 1961</span></div>
+                        <h4>Arsène Lupin</h4>
+                        <p class="co">France Inter</p>
+                    </div>
+                    <div class="rtop">
+                        <ul class="rl">
+                            <li><span class="lb">Realizzazione:</span> Abder Isker</li>
+                            <li><span class="lb">Adattamenti:</span> Jean Marcillac</li>
+                            <li><span class="lb">Voce di Arsène Lupin:</span> Michel Roux</li>
+                        </ul>
+                        <a class="lnk" href="https://podcasts.ina.fr/main/pub/emission/15163-Les-Aventures-d-Ars%C3%A8ne-Lupin" target="_blank" rel="noopener noreferrer">Ascolta la serie restaurata su INA ↗</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- 7. DISCOGRAFIA -->
+        <section id="discografia" class="sec w7 alt">
+            <div class="sh">
+                <div class="so">💿</div>
+                <h2>Discografia</h2>
+                <p class="ss">Gli audiolibri Livraphone</p>
+                <div class="dv"><span class="dl"></span><span class="dm"><span class="s1">✦</span><span class="s2">❦</span><span class="s1">✦</span></span><span class="dr"></span></div>
+            </div>
+            <div class="grid g4">
+                <article class="card c-dis">
+                    <div><div class="ch"><svg class="ic"><use href="#i-disc"/></svg><span class="cy">2001</span></div>
+                    <h4>La Demeure mystérieuse</h4>
+                    <p class="co">Testo ridotto (3 cd)</p></div>
+                    <p class="cn">Livraphone LIV 7014</p>
+                </article>
+                <article class="card c-dis">
+                    <div><div class="ch"><svg class="ic"><use href="#i-disc"/></svg><span class="cy">2004</span></div>
+                    <h4>L’Aiguille creuse</h4>
+                    <p class="co">Testo integrale (6 cd)</p></div>
+                    <p class="cn">Livraphone LIV167C</p>
+                </article>
+                <article class="card c-dis">
+                    <div><div class="ch"><svg class="ic"><use href="#i-disc"/></svg><span class="cy">2004</span></div>
+                    <h4>La demoiselle aux yeux verts</h4>
+                    <p class="co">Testo integrale (6 cd)</p></div>
+                    <p class="cn">Livraphone <span class="nw">EAN 3358950000197</span></p>
+                </article>
+                <article class="card c-dis">
+                    <div><div class="ch"><svg class="ic"><use href="#i-disc"/></svg><span class="cy">2004</span></div>
+                    <h4>La Barre y va</h4>
+                    <p class="co">Testo integrale (5 cd)</p></div>
+                    <p class="cn">Livraphone <span class="nw">EAN 3358950000319</span></p>
+                </article>
+            </div>
+        </section>
+
+        <!-- 8. FUMETTI -->
+        <section id="fumetti" class="sec w7">
+            <div class="sh">
+                <div class="so">🎨</div>
+                <h2>Fumetti</h2>
+                <p class="ss">Arsène Lupin adattato da André-Paul Duchâteau (Claude Lefrancq Éditeur, Bruxelles)</p>
+                <div class="dv"><span class="dl"></span><span class="dm"><span class="s1">✦</span><span class="s2">❦</span><span class="s1">✦</span></span><span class="dr"></span></div>
+            </div>
+            <div class="grid g3">
+                <article class="card c-com">
+                    <div><div class="ch"><svg class="ic"><use href="#i-palette"/></svg><span class="cy">1989</span></div>
+                    <span class="bdg">Volume 1</span><h4>Le bouchon de cristal</h4></div>
+                    <p class="cn"><span class="lb">Disegni di</span> Jacques Géron</p>
+                </article>
+                <article class="card c-com">
+                    <div><div class="ch"><svg class="ic"><use href="#i-palette"/></svg><span class="cy">1990</span></div>
+                    <span class="bdg">Volume 2</span><h4>813: la double vie</h4></div>
+                    <p class="cn"><span class="lb">Disegni di</span> Jacques Géron</p>
+                </article>
+                <article class="card c-com">
+                    <div><div class="ch"><svg class="ic"><use href="#i-palette"/></svg><span class="cy">1991</span></div>
+                    <span class="bdg">Volume 3</span><h4>813: les trois crimes</h4></div>
+                    <p class="cn"><span class="lb">Disegni di</span> Jacques Géron</p>
+                </article>
+                <article class="card c-com">
+                    <div><div class="ch"><svg class="ic"><use href="#i-palette"/></svg><span class="cy">1992</span></div>
+                    <span class="bdg">Volume 4</span><h4>La demoiselle aux yeux verts</h4></div>
+                    <p class="cn"><span class="lb">Disegni di</span> Jacques Géron</p>
+                </article>
+                <article class="card c-com">
+                    <div><div class="ch"><svg class="ic"><use href="#i-palette"/></svg><span class="cy">1992</span></div>
+                    <span class="bdg">Volume 5</span><h4>Victor de la Brigade Mondaine</h4></div>
+                    <p class="cn"><span class="lb">Disegni di</span> Erwin Drèze</p>
+                </article>
+                <article class="card c-com">
+                    <div><div class="ch"><svg class="ic"><use href="#i-palette"/></svg><span class="cy">1994</span></div>
+                    <span class="bdg">Volume 6</span><h4>L’Aiguille creuse</h4></div>
+                    <p class="cn"><span class="lb">Disegni di</span> Jacques Géron</p>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="f-in">
+            <div class="f-crown"><span>✦</span><svg class="ic"><use href="#i-crown"/></svg><span>✦</span></div>
+            <h3>ARSÈNE LUPIN — IL LADRO GENTILUOMO</h3>
+            <p class="f-p">Omaggio al personaggio letterario creato da <span>Maurice Leblanc</span> nel 1905. Un viaggio tra avventura e mistero nella Francia della Belle Époque, da Parigi alla Normandia.</p>
+            <div class="f-line"></div>
+            <div class="f-src">
+                <p>Testi basati sulle voci «Arsenio Lupin» di <a class="ul" href="https://it.wikipedia.org/wiki/Arsenio_Lupin" target="_blank" rel="noopener noreferrer">Wikipedia in italiano</a> e «Arsène Lupin» di <a class="ul" href="https://fr.wikipedia.org/wiki/Ars%C3%A8ne_Lupin" target="_blank" rel="noopener noreferrer">Wikipedia in francese</a> (traduzione e adattamento), disponibili con licenza <a class="ul" href="https://creativecommons.org/licenses/by-sa/4.0/deed.it" target="_blank" rel="noopener noreferrer">CC BY-SA 4.0</a>. Filmografia, serie radiofoniche, discografia e fumetti dall’edizione Newton Compton delle opere complete di Lupin. Schede dei film da IMDb. Locandine, copertine e immagini sono di proprietà dei rispettivi titolari e riprodotte a scopo illustrativo.</p>
+                <p class="cp">© <span id="anno">2026</span> — Arsène Lupin - Il Ladro Gentiluomo</p>
+            </div>
+        </div>
+    </footer>
+</div>
+
+<!-- CONTENUTI DELLE RACCOLTE (mostrati nella finestra al clic sulla scheda) -->
+<template id="m-1907"><div class="mh"><span class="my">1907</span><h3>Arsenio Lupin, ladro gentiluomo</h3><p class="mo">«Arsène Lupin, gentleman-cambrioleur»</p><div class="dv"><span class="dl"></span><span class="dm"><span class="s1">✦</span><span class="dt">9 racconti</span><span class="s2">❦</span><span class="s1">✦</span></span><span class="dr"></span></div></div>
+<ol class="ml">
+<li><span class="mn">1.</span><div><p class="mt">L’arresto di Arsenio Lupin</p><p class="mf">«L’arrestation d’Arsène Lupin»</p></div></li>
+<li><span class="mn">2.</span><div><p class="mt">Arsenio Lupin in prigione</p><p class="mf">«Arsène Lupin en prison»</p></div></li>
+<li><span class="mn">3.</span><div><p class="mt">L’evasione di Arsenio Lupin</p><p class="mf">«L’évasion d’Arsène Lupin»</p></div></li>
+<li><span class="mn">4.</span><div><p class="mt">Il misterioso viaggiatore</p><p class="mf">«Le mystérieux voyageur»</p></div></li>
+<li><span class="mn">5.</span><div><p class="mt">La collana della regina</p><p class="mf">«Le collier de la reine»</p></div></li>
+<li><span class="mn">6.</span><div><p class="mt">Il Sette di Cuori</p><p class="mf">«Le Sept de Cœur»</p></div></li>
+<li><span class="mn">7.</span><div><p class="mt">La cassaforte di madame Imbert</p><p class="mf">«Le coffre-fort de madame Imbert»</p></div></li>
+<li><span class="mn">8.</span><div><p class="mt">La perla nera</p><p class="mf">«La perle noire»</p></div></li>
+<li><span class="mn">9.</span><div><p class="mt">Herlock Sholmes arriva troppo tardi</p><p class="mf">«Herlock Sholmès arrive trop tard»</p></div></li>
+</ol></template>
+
+<template id="m-1908"><div class="mh"><span class="my">1908</span><h3>Arsenio Lupin contro Herlock Sholmes</h3><p class="mo">«Arsène Lupin contre Herlock Sholmès»</p><div class="dv"><span class="dl"></span><span class="dm"><span class="s1">✦</span><span class="dt">Un romanzo e un racconto</span><span class="s2">❦</span><span class="s1">✦</span></span><span class="dr"></span></div></div>
+<ol class="ml">
+<li><span class="mn">1.</span><div><p class="mt">La donna bionda <span class="bdg">Romanzo</span></p><p class="mf">«La dame blonde»</p></div></li>
+<li><span class="mn">2.</span><div><p class="mt">La lampada ebraica <span class="bdg">Racconto</span></p><p class="mf">«La lampe juive»</p></div></li>
+</ol></template>
+
+<template id="m-1910"><div class="mh"><span class="my">1910</span><h3>813</h3><p class="mo">«813»</p><div class="dv"><span class="dl"></span><span class="dm"><span class="s1">✦</span><span class="dt">Rieditato nel 1917 in due volumi</span><span class="s2">❦</span><span class="s1">✦</span></span><span class="dr"></span></div></div>
+<ol class="ml">
+<li><span class="mn">1.</span><div><p class="mt">La doppia vita di Arsenio Lupin <span class="bdg">Volume I</span></p><p class="mf">«La double vie d’Arsène Lupin»</p></div></li>
+<li><span class="mn">2.</span><div><p class="mt">I tre delitti di Arsenio Lupin <span class="bdg">Volume II</span></p><p class="mf">«Les trois crimes d’Arsène Lupin»</p></div></li>
+</ol></template>
+
+<template id="m-1913"><div class="mh"><span class="my">1913</span><h3>Le confidenze di Arsenio Lupin</h3><p class="mo">«Les confidences d’Arsène Lupin»</p><div class="dv"><span class="dl"></span><span class="dm"><span class="s1">✦</span><span class="dt">9 racconti</span><span class="s2">❦</span><span class="s1">✦</span></span><span class="dr"></span></div></div>
+<ol class="ml">
+<li><span class="mn">1.</span><div><p class="mt">Giochi di sole</p><p class="mf">«Les jeux du soleil»</p></div></li>
+<li><span class="mn">2.</span><div><p class="mt">L’anello nuziale</p><p class="mf">«L’anneau nuptial»</p></div></li>
+<li><span class="mn">3.</span><div><p class="mt">Il segno dell’ombra</p><p class="mf">«Le signe de l’ombre»</p></div></li>
+<li><span class="mn">4.</span><div><p class="mt">La trappola infernale</p><p class="mf">«Le piège infernal»</p></div></li>
+<li><span class="mn">5.</span><div><p class="mt">La sciarpa di seta rossa</p><p class="mf">«L’écharpe de soie rouge»</p></div></li>
+<li><span class="mn">6.</span><div><p class="mt">La morte in agguato</p><p class="mf">«La mort qui rôde»</p></div></li>
+<li><span class="mn">7.</span><div><p class="mt">Edith dal Collo di Cigno</p><p class="mf">«Edith au Cou de Cygne»</p></div></li>
+<li><span class="mn">8.</span><div><p class="mt">La festuca di paglia</p><p class="mf">«Le fétu de paille»</p></div></li>
+<li><span class="mn">9.</span><div><p class="mt">Il matrimonio di Arsenio Lupin</p><p class="mf">«Le mariage d’Arsène Lupin»</p></div></li>
+</ol></template>
+
+<template id="m-1923"><div class="mh"><span class="my">1923</span><h3>Gli otto rintocchi del pendolo</h3><p class="mo">«Les huit coups de l’horloge»</p><div class="dv"><span class="dl"></span><span class="dm"><span class="s1">✦</span><span class="dt">8 racconti</span><span class="s2">❦</span><span class="s1">✦</span></span><span class="dr"></span></div></div>
+<ol class="ml">
+<li><span class="mn">1.</span><div><p class="mt">In cima alla torre</p><p class="mf">«Au sommet de la tour»</p></div></li>
+<li><span class="mn">2.</span><div><p class="mt">La caraffa d’acqua</p><p class="mf">«La carafe d’eau»</p></div></li>
+<li><span class="mn">3.</span><div><p class="mt">Thérèse e Germaine</p><p class="mf">«Thérèse et Germaine»</p></div></li>
+<li><span class="mn">4.</span><div><p class="mt">Il film rivelatore</p><p class="mf">«Le film révélateur»</p></div></li>
+<li><span class="mn">5.</span><div><p class="mt">Il caso di Jean-Louis</p><p class="mf">«Le cas de Jean-Louis»</p></div></li>
+<li><span class="mn">6.</span><div><p class="mt">La signora con l’ascia</p><p class="mf">«La dame à la hache»</p></div></li>
+<li><span class="mn">7.</span><div><p class="mt">Passi sulla neve</p><p class="mf">«Des pas sur la neige»</p></div></li>
+<li><span class="mn">8.</span><div><p class="mt">Al dio Mercurio</p><p class="mf">«Au dieu Mercure»</p></div></li>
+</ol></template>
+
+<template id="m-1928"><div class="mh"><span class="my">1928</span><h3>L’agenzia Barnett et Cie</h3><p class="mo">«L’agence Barnett et Cie»</p><div class="dv"><span class="dl"></span><span class="dm"><span class="s1">✦</span><span class="dt">8 racconti</span><span class="s2">❦</span><span class="s1">✦</span></span><span class="dr"></span></div></div>
+<ol class="ml">
+<li><span class="mn">1.</span><div><p class="mt">Le gocce che cadono</p><p class="mf">«Les gouttes qui tombent»</p></div></li>
+<li><span class="mn">2.</span><div><p class="mt">La lettera d’amore di re George</p><p class="mf">«La lettre d’amour du roi George»</p></div></li>
+<li><span class="mn">3.</span><div><p class="mt">La partita di baccarà</p><p class="mf">«La partie de baccara»</p></div></li>
+<li><span class="mn">4.</span><div><p class="mt">L’uomo dai denti d’oro</p><p class="mf">«L’homme aux dents d’or»</p></div></li>
+<li><span class="mn">5.</span><div><p class="mt">Le dodici Africane di Béchoux</p><p class="mf">«Les douze Africaines de Béchoux»</p></div></li>
+<li><span class="mn">6.</span><div><p class="mt">Il caso fa miracoli</p><p class="mf">«Le hasard fait des miracles»</p></div></li>
+<li><span class="mn">7.</span><div><p class="mt">Guanti bianchi... gambali bianchi</p><p class="mf">«Gants blancs... guêtres blanches»</p></div></li>
+<li><span class="mn">8.</span><div><p class="mt">Béchoux arresta Jim Barnett</p><p class="mf">«Béchoux arrête Jim Barnett»</p></div></li>
+</ol></template>
+
+<!-- FINESTRA CONTENUTO RACCOLTA -->
+<div id="modal" class="ov" role="dialog" aria-modal="true" hidden>
+    <div class="mbox">
+        <button type="button" class="mclose" id="mclose" aria-label="Chiudi"><svg class="ic"><use href="#i-x"/></svg></button>
+        <div id="mbody"></div>
+    </div>
+</div>
+
+<!-- LIGHTBOX IMMAGINI -->
+<div id="lb" class="ov" role="dialog" aria-modal="true" hidden>
+    <button type="button" id="lbx" aria-label="Chiudi"><svg class="ic"><use href="#i-x"/></svg></button>
+    <div class="lbf"><img id="lbi" src="" alt=""></div>
+    <p id="lbc"></p>
+</div>
+
+<script>
+(function () {
+    var d = document;
+    function $(s, r) { return (r || d).querySelector(s); }
+    function $$(s, r) { return Array.prototype.slice.call((r || d).querySelectorAll(s)); }
+
+    /* Menu mobile */
+    var burger = $('#burger'), mm = $('#mmenu');
+    burger.addEventListener('click', function () {
+        var o = mm.classList.toggle('open');
+        burger.classList.toggle('open', o);
+        burger.setAttribute('aria-expanded', o ? 'true' : 'false');
+    });
+    $$('#mmenu a').forEach(function (a) {
+        a.addEventListener('click', function () { mm.classList.remove('open'); burger.classList.remove('open'); burger.setAttribute('aria-expanded', 'false'); });
+    });
+
+    /* Anno nel footer */
+    $('#anno').textContent = new Date().getFullYear();
+
+    /* Ricerca e filtri dei libri */
+    var q = $('#q'), clr = $('#qclr'), type = 'ALL';
+    function norm(s) { return s.toLowerCase().replace(/[’‘]/g, "'"); }
+    var items = $$('.bk').map(function (c) {
+        return {
+            el: c,
+            it: norm($('h4', c).textContent),
+            or: norm($('.bo', c).textContent.replace(/[«»]/g, '')),
+            y: c.getAttribute('data-y'),
+            t: c.getAttribute('data-t')
+        };
+    });
+    function apply() {
+        var raw = q.value, n = norm(raw), k = 0;
+        items.forEach(function (i) {
+            var ok = i.it.indexOf(n) > -1 || i.or.indexOf(n) > -1 || i.y.indexOf(raw) > -1;
+            if (ok && type !== 'ALL') ok = i.t.indexOf(type) > -1;
+            i.el.hidden = !ok;
+            if (ok) k++;
+        });
+        $('#cnt').textContent = k;
+        clr.hidden = !raw;
+        $('#qtxt').textContent = raw;
+        $('#empty').hidden = k > 0;
+    }
+    q.addEventListener('input', apply);
+    clr.addEventListener('click', function () { q.value = ''; apply(); q.focus(); });
+    $$('.pill').forEach(function (p) {
+        p.addEventListener('click', function () {
+            type = p.getAttribute('data-f');
+            $$('.pill').forEach(function (x) { x.classList.toggle('on', x === p); });
+            apply();
+        });
+    });
+    $('#reset').addEventListener('click', function () {
+        q.value = ''; type = 'ALL';
+        $$('.pill').forEach(function (x) { x.classList.toggle('on', x.getAttribute('data-f') === 'ALL'); });
+        apply();
+    });
+
+    /* Finestre (contenuto raccolte e immagini ingrandite) */
+    var modal = $('#modal'), mbody = $('#mbody'), lb = $('#lb');
+    function sync() { d.body.style.overflow = (modal.hidden && lb.hidden) ? '' : 'hidden'; }
+    function openBook(id) {
+        var t = d.getElementById(id);
+        if (!t) return;
+        mbody.innerHTML = t.innerHTML;
+        modal.hidden = false;
+        $('.mbox', modal).scrollTop = 0;
+        sync();
+    }
+    function closeModal() { modal.hidden = true; sync(); }
+    function closeLb() { lb.hidden = true; sync(); }
+    $$('.click').forEach(function (c) {
+        c.addEventListener('click', function () { openBook(c.getAttribute('data-m')); });
+        c.addEventListener('keydown', function (e) {
+            if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openBook(c.getAttribute('data-m')); }
+        });
+    });
+    modal.addEventListener('click', function (e) { if (e.target === modal) closeModal(); });
+    $('#mclose').addEventListener('click', closeModal);
+
+    $$('.zoom').forEach(function (img) {
+        img.addEventListener('click', function () {
+            $('#lbi').src = img.getAttribute('src');
+            $('#lbi').alt = img.getAttribute('alt') || '';
+            $('#lbc').textContent = img.getAttribute('data-cap') || '';
+            lb.hidden = false;
+            sync();
+        });
+    });
+    lb.addEventListener('click', function (e) { if (!e.target.closest('.lbf')) closeLb(); });
+    $('#lbx').addEventListener('click', closeLb);
+
+    d.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') { closeModal(); closeLb(); }
+    });
+})();
+</script>
 </body>
 </html>
