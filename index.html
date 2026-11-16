@@ -47,6 +47,7 @@
         section[id]{scroll-margin-top:80px}
         .ic{width:1.25rem;height:1.25rem;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}
         .cinzel{font-family:'Cinzel',serif}
+        .sr{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
 
         /* Scrollbar */
         ::-webkit-scrollbar{width:8px}
@@ -474,6 +475,7 @@
                 <div class="so">📖</div>
                 <h2>I Romanzi &amp; i Racconti</h2>
                 <p class="ss">Il canone letterario ufficiale scritto da Maurice Leblanc (1907 – postumi)</p>
+                <h3 class="sr">Elenco delle opere</h3>
                 <div class="dv"><span class="dl"></span><span class="dm"><span class="s1">✦</span><span class="s2">❦</span><span class="s1">✦</span></span><span class="dr"></span></div>
             </div>
 
@@ -495,12 +497,12 @@
             </div>
 
             <div class="grid g3" id="books">
-                <article class="card bk click" data-y="1907" data-t="raccolta" data-m="m-1907" role="button" tabindex="0">
+                <article class="card bk click" data-y="1907" data-t="raccolta" data-m="m-1907" tabindex="0">
                     <div class="bh"><span class="by">1907</span><span class="bdg">Raccolta di 9 racconti</span></div>
                     <div class="bti"><h4>Arsenio Lupin, ladro gentiluomo</h4><p class="bo">«Arsène Lupin, gentleman-cambrioleur»</p></div>
                     <p class="bn">La celebre opera d’esordio che raccoglie i primi racconti usciti su «Je Sais Tout».<span class="cta">❦ Vedi i 9 racconti ›</span></p>
                 </article>
-                <article class="card bk click" data-y="1908" data-t="raccolta romanzo" data-m="m-1908" role="button" tabindex="0">
+                <article class="card bk click" data-y="1908" data-t="raccolta romanzo" data-m="m-1908" tabindex="0">
                     <div class="bh"><span class="by">1908</span><span class="bdg">Raccolta / Romanzo</span></div>
                     <div class="bti"><h4>Arsenio Lupin contro Herlock Sholmes</h4><p class="bo">«Arsène Lupin contre Herlock Sholmès»</p></div>
                     <p class="bn">Il leggendario scontro con la celebre parodia del detective britannico di Conan Doyle.<span class="cta">❦ Vedi i due episodi ›</span></p>
@@ -510,7 +512,7 @@
                     <div class="bti"><h4>Il faraglione cavo</h4><p class="bo">«L’Aiguille creuse»</p></div>
                     <p class="bn">Noto anche come «La guglia cava» o «Il segreto della guglia». Capolavoro indiscusso.</p>
                 </article>
-                <article class="card bk click" data-y="1910" data-t="romanzo" data-m="m-1910" role="button" tabindex="0">
+                <article class="card bk click" data-y="1910" data-t="romanzo" data-m="m-1910" tabindex="0">
                     <div class="bh"><span class="by">1910</span><span class="bdg">Romanzo</span></div>
                     <div class="bti"><h4>813</h4><p class="bo">«813»</p></div>
                     <p class="bn">Riedito nel 1917 in due tomi: «La doppia vita di Arsenio Lupin» e «I tre delitti di Arsenio Lupin».<span class="cta">❦ Vedi i due volumi del 1917 ›</span></p>
@@ -525,7 +527,7 @@
                     <div class="bti"><h4>L’uomo con la pelle di capra</h4><p class="bo">«L’homme à la peau de bique»</p></div>
                     <p class="bn">Pubblicato inizialmente su rivista negli Stati Uniti prima dell’edizione francese.</p>
                 </article>
-                <article class="card bk click" data-y="1913" data-t="raccolta" data-m="m-1913" role="button" tabindex="0">
+                <article class="card bk click" data-y="1913" data-t="raccolta" data-m="m-1913" tabindex="0">
                     <div class="bh"><span class="by">1913</span><span class="bdg">Raccolta di 9 racconti</span></div>
                     <div class="bti"><h4>Le confidenze di Arsenio Lupin</h4><p class="bo">«Les confidences d’Arsène Lupin»</p></div>
                     <p class="bn">Nove brillanti avventure retrospettive narrate dal ladro gentiluomo.<span class="cta">❦ Vedi i 9 racconti ›</span></p>
@@ -550,7 +552,7 @@
                     <div class="bti"><h4>I denti della Tigre</h4><p class="bo">«Les Dents du Tigre»</p></div>
                     <p class="bn">Lupin torna sotto l’identità di Don Luis Perenna per risolvere un’eredità insanguinata.</p>
                 </article>
-                <article class="card bk click" data-y="1923" data-t="raccolta" data-m="m-1923" role="button" tabindex="0">
+                <article class="card bk click" data-y="1923" data-t="raccolta" data-m="m-1923" tabindex="0">
                     <div class="bh"><span class="by">1923</span><span class="bdg">Raccolta di 8 racconti</span></div>
                     <div class="bti"><h4>Gli otto rintocchi del pendolo</h4><p class="bo">«Les huit coups de l’horloge»</p></div>
                     <p class="bn">Lupin, nei panni del principe Rénine, risolve otto enigmi con la giovane Hortense.<span class="cta">❦ Vedi i 8 racconti ›</span></p>
@@ -570,7 +572,7 @@
                     <div class="bti"><h4>La signorina dagli occhi verdi</h4><p class="bo">«La demoiselle aux yeux verts»</p></div>
                     <p class="bn">Un inseguimento amoroso e investigativo attraverso le province francesi.</p>
                 </article>
-                <article class="card bk click" data-y="1928" data-t="raccolta" data-m="m-1928" role="button" tabindex="0">
+                <article class="card bk click" data-y="1928" data-t="raccolta" data-m="m-1928" tabindex="0">
                     <div class="bh"><span class="by">1928</span><span class="bdg">Raccolta di 8 racconti</span></div>
                     <div class="bti"><h4>L’agenzia Barnett et Cie</h4><p class="bo">«L’agence Barnett et Cie»</p></div>
                     <p class="bn">Lupin assume l’identità del detective privato Jim Barnett.<span class="cta">❦ Vedi i 8 racconti ›</span></p>
@@ -634,6 +636,7 @@
                 <div class="so">🎭</div>
                 <h2>Le Opere Teatrali</h2>
                 <p class="ss">Il fascino parigino di Lupin calca il palcoscenico dei boulevard</p>
+                <h3 class="sr">Elenco delle opere teatrali</h3>
                 <div class="dv"><span class="dl"></span><span class="dm"><span class="s1">✦</span><span class="s2">❦</span><span class="s1">✦</span></span><span class="dr"></span></div>
             </div>
             <div class="grid g3">
@@ -888,6 +891,7 @@
                 <div class="so">📻</div>
                 <h2>Serie Radiofoniche</h2>
                 <p class="ss">La voce di Lupin sulle onde francesi</p>
+                <h3 class="sr">Elenco delle serie radiofoniche</h3>
                 <div class="dv"><span class="dl"></span><span class="dm"><span class="s1">✦</span><span class="s2">❦</span><span class="s1">✦</span></span><span class="dr"></span></div>
             </div>
             <div class="grid g3">
@@ -915,6 +919,7 @@
                 <div class="so">💿</div>
                 <h2>Discografia</h2>
                 <p class="ss">Gli audiolibri Livraphone</p>
+                <h3 class="sr">Elenco degli audiolibri</h3>
                 <div class="dv"><span class="dl"></span><span class="dm"><span class="s1">✦</span><span class="s2">❦</span><span class="s1">✦</span></span><span class="dr"></span></div>
             </div>
             <div class="grid g4">
@@ -951,6 +956,7 @@
                 <div class="so">🎨</div>
                 <h2>Fumetti</h2>
                 <p class="ss">Arsène Lupin adattato da André-Paul Duchâteau (Claude Lefrancq Éditeur, Bruxelles)</p>
+                <h3 class="sr">Elenco dei fumetti</h3>
                 <div class="dv"><span class="dl"></span><span class="dm"><span class="s1">✦</span><span class="s2">❦</span><span class="s1">✦</span></span><span class="dr"></span></div>
             </div>
             <div class="grid g3">
@@ -1077,7 +1083,7 @@
 <!-- LIGHTBOX IMMAGINI -->
 <div id="lb" class="ov" role="dialog" aria-modal="true" hidden>
     <button type="button" id="lbx" aria-label="Chiudi"><svg class="ic"><use href="#i-x"/></svg></button>
-    <div class="lbf"><img id="lbi" src="" alt=""></div>
+    <div class="lbf"><img id="lbi" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt=""></div>
     <p id="lbc"></p>
 </div>
 
